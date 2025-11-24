@@ -522,33 +522,36 @@
 .koi::before {
   content: "";
   position: absolute;
-  left: -18px;
+  right: -18px;            /* instead of left */
   top: 50%;
   width: 32px;
   height: 24px;
   border-radius: 999px;
   background:
-    radial-gradient(circle at 30% 40%, #0f172a 0 22%, transparent 30%),
-    radial-gradient(circle at 55% 55%, #fee2e2 0 45%, #f97316 50% 100%);
+    radial-gradient(circle at 70% 40%, #0f172a 0 22%, transparent 30%),   /* eye */
+    radial-gradient(circle at 45% 55%, #fee2e2 0 45%, #f97316 50% 100%);  /* head */
   transform: translateY(-50%);
 }
+
 
 /* tail + dorsal fin */
 .koi::after {
   content: "";
   position: absolute;
-  right: -20px;
+  left: -20px;             /* instead of right */
   top: 50%;
   width: 30px;
   height: 24px;
   border-radius: 999px;
   background:
-    radial-gradient(circle at 0% 0%, rgba(255,255,255,0.9) 0 40%, transparent 60%),
+    radial-gradient(circle at 100% 0%, rgba(255,255,255,0.9) 0 40%, transparent 60%),
     rgba(248, 250, 252, 0.85);
-  transform-origin: 0% 50%;
+  transform-origin: 100% 50%;      /* pivot at the fin side */
   transform: translateY(-50%);
-  box-shadow: -4px 0 6px rgba(15, 23, 42, 0.6);
+  box-shadow: 4px 0 6px rgba(15, 23, 42, 0.6);
+  animation: tail-flick 0.45s ease-in-out infinite;
 }
+
 
 /* bounce swim:
    - start left, head right
@@ -579,12 +582,12 @@
   }
 }
 
-/* tail flick (independent of direction) */
 @keyframes tail-flick {
   0%   { transform: translateY(-50%) rotate(6deg); }
   50%  { transform: translateY(-50%) rotate(-8deg); }
   100% { transform: translateY(-50%) rotate(6deg); }
 }
+
 
 /* lanes + speeds (all using swim-bounce) */
 .koi-1,
