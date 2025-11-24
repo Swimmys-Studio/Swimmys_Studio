@@ -441,70 +441,108 @@
       border: 1px dashed rgba(248, 250, 252, 0.2);
     }
 
-    /* Animated koi banners */
+    /* Animated koi water banners */
     .koi-banner {
       margin-top: 2.5rem;
       margin-bottom: 1.5rem;
       border-radius: var(--radius-xl);
       background: radial-gradient(circle at 20% 0, #172554, #020617);
       border: 1px solid rgba(148, 163, 184, 0.4);
-      padding: 0.75rem 0;
-      overflow: hidden;
-      position: relative;
+      padding: 0.85rem 1.25rem 1.25rem;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
     }
 
-    .koi-banner-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1.25rem;
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-
-    .koi-banner-text {
-      font-size: 0.85rem;
+    .koi-banner p {
+      font-size: 0.88rem;
       color: var(--muted);
+      max-width: 30rem;
     }
 
-    .koi-banner-text strong {
+    .koi-banner strong {
       color: #e5e7eb;
     }
 
-    .koi-strip {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      min-width: 200%;
-      animation: swim-strip 24s linear infinite;
-      pointer-events: none;
+    .koi-stream {
+      margin-top: 0.7rem;
+      width: 100%;
+      height: 46px;
+      background: linear-gradient(90deg, #0f172a, #020617);
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      position: relative;
+      overflow: hidden;
+      box-shadow: inset 0 0 18px rgba(15, 23, 42, 0.9);
     }
 
-    .koi-strip img {
-      height: 52px;
-      width: auto;
-      opacity: 0.9;
-      filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.6));
-    }
-
-    .koi-banner--thin {
-      margin-top: 2rem;
-      padding: 0.4rem 0;
-      opacity: 0.95;
-    }
-
-    .koi-banner--thin .koi-strip img {
-      height: 40px;
+    .koi-stream::before,
+    .koi-stream::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.18) 0, transparent 55%),
+        radial-gradient(circle at 80% 60%, rgba(45, 212, 191, 0.16) 0, transparent 55%);
       opacity: 0.8;
     }
 
-    @keyframes swim-strip {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
+    .fish {
+      position: absolute;
+      width: 28px;
+      height: 14px;
+      background: #fb923c;
+      border-radius: 999px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+      z-index: 2;
+    }
+
+    .fish::before {
+      content: "";
+      position: absolute;
+      right: -9px;
+      top: 50%;
+      width: 0;
+      height: 0;
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      border-left: 9px solid #f97316;
+      transform: translateY(-50%);
+    }
+
+    .fish::after {
+      content: "";
+      position: absolute;
+      left: 6px;
+      top: 4px;
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #fee2e2;
+      opacity: 0.85;
+    }
+
+    .fish-1 { top: 8px; animation: swim-right 18s linear infinite; }
+    .fish-2 { top: 24px; animation: swim-right 22s linear infinite; opacity: 0.9; }
+    .fish-3 { top: 16px; animation: swim-right 26s linear infinite; opacity: 0.85; }
+    .fish-4 { top: 6px; animation: swim-right 20s linear infinite; opacity: 0.75; }
+    .fish-5 { top: 28px; animation: swim-right 24s linear infinite; opacity: 0.8; }
+
+    .fish-2 { animation-delay: -6s; }
+    .fish-3 { animation-delay: -12s; }
+    .fish-4 { animation-delay: -3s; }
+    .fish-5 { animation-delay: -15s; }
+
+    @keyframes swim-right {
+      0% { transform: translateX(-40px); }
+      100% { transform: translateX(110%); }
+    }
+
+    .koi-banner--bottom {
+      margin-top: 2rem;
+      padding-block: 0.7rem 1.1rem;
+    }
+
+    .koi-banner--bottom .koi-stream {
+      height: 40px;
     }
 
     /* Social section */
@@ -594,13 +632,6 @@
       .grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
-      .koi-banner-inner {
-        flex-direction: column-reverse;
-        align-items: flex-start;
-      }
-      .koi-strip {
-        min-width: 160%;
-      }
     }
 
     @media (max-width: 640px) {
@@ -613,11 +644,15 @@
       main {
         padding-inline: 1rem;
       }
-      .koi-strip img {
-        height: 42px;
+      .koi-stream {
+        height: 40px;
       }
-      .koi-banner--thin .koi-strip img {
-        height: 32px;
+      .koi-banner--bottom .koi-stream {
+        height: 34px;
+      }
+      .fish {
+        width: 24px;
+        height: 12px;
       }
     }
   </style>
@@ -702,27 +737,17 @@
   </section>
 
   <!-- ANIMATED KOI BANNER (TOP) -->
-  <section class="koi-banner" aria-hidden="true">
-    <div class="koi-banner-inner">
-      <div class="koi-banner-text">
-        <strong>Koi current:</strong> New tech is always flowing through the Studio — from tiny quality-of-life upgrades to big setup overhauls.
-      </div>
-      <div class="koi-strip">
-        <!-- Repeat koi logos to create a continuous swimming effect -->
-        <img src="Swimmys_Studio.png" alt="" />
-        <img src="Swimmys_Studio.png" alt="" />
-        <img src="Swimmys_Studio.png" alt="" />
-        <img src="Swimmys_Studio.png" alt="" />
-        <img src="Swimmys_Studio.png" alt="" />
-        <img src="Swimmys_Studio.png" alt="" />
-        <!-- duplicate sequence for seamless loop -->
-        <img src="Swimmys_Studio.png" alt="" />
-        <img src="Swimmys_Studio.png" alt="" />
-        <img src="Swimmys_Studio.png" alt="" />
-        <img src="Swimmys_Studio.png" alt="" />
-        <img src="Swimmys_Studio.png" alt="" />
-        <img src="Swimmys_Studio.png" alt="" />
-      </div>
+  <section class="koi-banner" aria-hidden="false">
+    <p>
+      <strong>Koi current:</strong> New tech is always flowing through the Studio — from tiny
+      quality-of-life upgrades to big setup overhauls.
+    </p>
+    <div class="koi-stream">
+      <div class="fish fish-1"></div>
+      <div class="fish fish-2"></div>
+      <div class="fish fish-3"></div>
+      <div class="fish fish-4"></div>
+      <div class="fish fish-5"></div>
     </div>
   </section>
 
@@ -959,25 +984,17 @@
   </section>
 
   <!-- ANIMATED KOI BANNER (BOTTOM) -->
-  <section class="koi-banner koi-banner--thin" aria-hidden="true">
-    <div class="koi-banner-inner">
-      <div class="koi-banner-text">
-        <strong>Swim with the stream:</strong> New gadgets, tweaks, and setup ideas flow through here all the time.
-      </div>
-      <div class="koi-strip">
-        <img src="Swimmys_Studio.png" alt="" />
-        <img src="Swimmys_Studio.png" alt="" />
-        <img src="Swimmys_Studio.png" alt="" />
-        <img src="Swimmys_Studio.png" alt="" />
-        <img src="Swimmys_Studio.png" alt="" />
-        <img src="Swimmys_Studio.png" alt="" />
-        <img src="Swimmys_Studio.png" alt="" />
-        <img src="Swimmys_Studio.png" alt="" />
-        <img src="Swimmys_Studio.png" alt="" />
-        <img src="Swimmys_Studio.png" alt="" />
-        <img src="Swimmys_Studio.png" alt="" />
-        <img src="Swimmys_Studio.png" alt="" />
-      </div>
+  <section class="koi-banner koi-banner--bottom" aria-hidden="false">
+    <p>
+      <strong>Swim with the stream:</strong> New gadgets, tweaks, and setup ideas flow through
+      here all the time. Save the site or follow on social so you don’t miss the next drop.
+    </p>
+    <div class="koi-stream">
+      <div class="fish fish-1"></div>
+      <div class="fish fish-2"></div>
+      <div class="fish fish-3"></div>
+      <div class="fish fish-4"></div>
+      <div class="fish fish-5"></div>
     </div>
   </section>
 
