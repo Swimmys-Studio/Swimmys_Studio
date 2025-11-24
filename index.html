@@ -441,7 +441,7 @@
       border: 1px dashed rgba(248, 250, 252, 0.2);
     }
 
-    /* Animated koi water banners */
+    /* Animated koi water banners (using real images) */
     .koi-banner {
       margin-top: 2.5rem;
       margin-bottom: 1.5rem;
@@ -455,7 +455,7 @@
     .koi-banner p {
       font-size: 0.88rem;
       color: var(--muted);
-      max-width: 30rem;
+      max-width: 55rem;
     }
 
     .koi-banner strong {
@@ -465,93 +465,79 @@
     .koi-stream {
       margin-top: 0.7rem;
       width: 100%;
-      height: 46px;
-      background: linear-gradient(90deg, #0f172a, #020617);
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
+      height: 60px;
       position: relative;
       overflow: hidden;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
       box-shadow: inset 0 0 18px rgba(15, 23, 42, 0.9);
+      background: url("koi-water.jpg") center/cover no-repeat;
     }
 
-    .koi-stream::before,
+    /* subtle water shimmer overlay */
     .koi-stream::after {
       content: "";
       position: absolute;
       inset: 0;
-      background-image:
-        radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.18) 0, transparent 55%),
-        radial-gradient(circle at 80% 60%, rgba(45, 212, 191, 0.16) 0, transparent 55%);
-      opacity: 0.8;
+      background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0.18),
+        transparent 40%,
+        transparent 60%,
+        rgba(148, 163, 184, 0.22)
+      );
+      mix-blend-mode: screen;
+      opacity: 0.35;
+      pointer-events: none;
+      animation: water-glide 9s linear infinite;
     }
 
-    /* Koi fish in the water stream */
-    .fish {
-      position: absolute;
-      width: 42px;
-      height: 20px;
-  /* orange koi body with light patch */
-      background:
-        radial-gradient(circle at 30% 40%, #fef9c3 0 40%, transparent 45%) ,
-        #fb923c;
-      border-radius: 999px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-      z-index: 2;
+    @keyframes water-glide {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-20%); }
     }
 
-/* tail */
-    .fish::before {
-      content: "";
+    /* Realistic koi images */
+    .koi {
       position: absolute;
-      right: -10px;
       top: 50%;
-      width: 0;
-      height: 0;
-      border-top: 9px solid transparent;
-      border-bottom: 9px solid transparent;
-      border-left: 10px solid #f97316;
-      transform: translateY(-50%);
+      transform: translate(-20%, -50%);
+      height: 46px;
+      width: auto;
+      pointer-events: none;
+      filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.7));
     }
 
-/* eye + little head highlight */
-    .fish::after {
-      content: "";
-      position: absolute;
-      left: 8px;
-      top: 6px;
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 40% 40%, #0f172a 0 45%, #fee2e2 50% 100%);
-      opacity: 0.95;
+    /* three koi on different "lanes" and speeds */
+    .koi-1 {
+      animation: swim-right 10s linear infinite;
     }
 
-/* slightly different lanes + speeds so they feel alive */
-    .fish-1 { top: 6px;  animation: swim-right 11s linear infinite; }
-    .fish-2 { top: 22px; animation: swim-right 13s linear infinite; opacity: 0.95; }
-    .fish-3 { top: 14px; animation: swim-right 15s linear infinite; opacity: 0.9; }
-    .fish-4 { top: 4px;  animation: swim-right 12s linear infinite; opacity: 0.85; }
-    .fish-5 { top: 26px; animation: swim-right 14s linear infinite; opacity: 0.88; }
+    .koi-2 {
+      animation: swim-right 12s linear infinite;
+    }
 
-    .fish-2 { animation-delay: -4s; }
-    .fish-3 { animation-delay: -8s; }
-    .fish-4 { animation-delay: -2s; }
-    .fish-5 { animation-delay: -10s; }
+    .koi-3 {
+      animation: swim-right 14s linear infinite;
+    }
 
-/* faster swimming animation */
-@keyframes swim-right {
-  0%   { transform: translateX(-50px); }
-  100% { transform: translateX(110%); }
-}
+    /* lane offsets & staggered delays */
+    .koi-1 { top: 42%; animation-delay: -3s; }
+    .koi-2 { top: 60%; animation-delay: -7s; }
+    .koi-3 { top: 30%; animation-delay: -11s; }
 
+    /* faster swim across full length of bar */
+    @keyframes swim-right {
+      0%   { transform: translate(-25%, -50%); }
+      100% { transform: translate(125%, -50%); }
+    }
 
     .koi-banner--bottom {
       margin-top: 2rem;
       padding-block: 0.7rem 1.1rem;
     }
-
     .koi-banner--bottom .koi-stream {
-      height: 40px;
+      height: 52px;
     }
 
     /* Social section */
@@ -654,14 +640,13 @@
         padding-inline: 1rem;
       }
       .koi-stream {
-        height: 40px;
+        height: 52px;
       }
       .koi-banner--bottom .koi-stream {
-        height: 34px;
+        height: 44px;
       }
-      .fish {
-        width: 24px;
-        height: 12px;
+      .koi {
+        height: 38px;
       }
     }
   </style>
@@ -746,17 +731,15 @@
   </section>
 
   <!-- ANIMATED KOI BANNER (TOP) -->
-  <section class="koi-banner" aria-hidden="false">
+  <section class="koi-banner">
     <p>
       <strong>Koi current:</strong> New tech is always flowing through the Studio — from tiny
       quality-of-life upgrades to big setup overhauls.
     </p>
     <div class="koi-stream">
-      <div class="fish fish-1"></div>
-      <div class="fish fish-2"></div>
-      <div class="fish fish-3"></div>
-      <div class="fish fish-4"></div>
-      <div class="fish fish-5"></div>
+      <img src="koi-fish-1.png" alt="Swimming koi fish" class="koi koi-1" />
+      <img src="koi-fish-2.png" alt="Swimming koi fish" class="koi koi-2" />
+      <img src="koi-fish-3.png" alt="Swimming koi fish" class="koi koi-3" />
     </div>
   </section>
 
@@ -993,17 +976,15 @@
   </section>
 
   <!-- ANIMATED KOI BANNER (BOTTOM) -->
-  <section class="koi-banner koi-banner--bottom" aria-hidden="false">
+  <section class="koi-banner koi-banner--bottom">
     <p>
       <strong>Swim with the stream:</strong> New gadgets, tweaks, and setup ideas flow through
       here all the time. Save the site or follow on social so you don’t miss the next drop.
     </p>
     <div class="koi-stream">
-      <div class="fish fish-1"></div>
-      <div class="fish fish-2"></div>
-      <div class="fish fish-3"></div>
-      <div class="fish fish-4"></div>
-      <div class="fish fish-5"></div>
+      <img src="koi-fish-1.png" alt="Swimming koi fish" class="koi koi-1" />
+      <img src="koi-fish-2.png" alt="Swimming koi fish" class="koi koi-2" />
+      <img src="koi-fish-3.png" alt="Swimming koi fish" class="koi koi-3" />
     </div>
   </section>
 
