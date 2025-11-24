@@ -154,4 +154,750 @@
     }
 
     .hero-title {
-      font-size: clamp(2.1rem, 3vw, 2.6
+      font-size: clamp(2.1rem, 3vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title span {
+      color: var(--accent);
+    }
+
+    .hero-text {
+      font-size: 0.98rem;
+      color: var(--muted);
+      max-width: 32rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ff6b35, #ffa62b);
+      color: #111827;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.55);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 34px rgba(0, 0, 0, 0.75);
+    }
+
+    .btn-ghost {
+      background: rgba(15, 23, 42, 0.75);
+      color: var(--muted);
+      border-color: rgba(148, 163, 184, 0.35);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 0.95);
+      color: var(--text);
+    }
+
+    .hero-meta {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .hero-meta span {
+      color: #fde68a;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top, #1f2937, #020617);
+      border-radius: var(--radius-xl);
+      padding: 1.75rem 1.5rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-koi-orbit {
+      width: 260px;
+      height: 260px;
+      border-radius: 999px;
+      border: 1px dashed rgba(148, 163, 184, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+      position: relative;
+    }
+
+    .hero-koi {
+      width: 180px;
+      height: 180px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #ffe7d5, #ff6b35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+      overflow: hidden;
+    }
+
+    .hero-koi img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.05);
+    }
+
+    .bubble {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .bubble:nth-child(2) {
+      top: 15%;
+      right: 12%;
+    }
+
+    .bubble:nth-child(3) {
+      bottom: 10%;
+      left: 14%;
+      width: 14px;
+      height: 14px;
+    }
+
+    .bubble:nth-child(4) {
+      top: 52%;
+      left: 6%;
+      width: 8px;
+      height: 8px;
+    }
+
+    .hero-card h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #e5e7eb;
+    }
+
+    .hero-card p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .pill {
+      font-size: 0.7rem;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: #d1d5db;
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .disclaimer-chip {
+      margin-top: 0.25rem;
+      font-size: 0.7rem;
+      color: var(--muted);
+      background: rgba(15, 23, 42, 0.85);
+      border-radius: 999px;
+      padding: 0.25rem 0.55rem;
+      display: inline-flex;
+      gap: 0.35rem;
+      align-items: center;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #fbbf24;
+    }
+
+    /* Sections */
+    section {
+      margin-top: 3rem;
+    }
+
+    .section-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-description {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 40rem;
+    }
+
+    /* Featured Builds */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      padding: 1.1rem 1rem 1rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-tag {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #9ca3af;
+      margin-bottom: 0.35rem;
+    }
+
+    .card-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .card-text {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: #9ca3af;
+    }
+
+    .price-tag {
+      font-weight: 600;
+      color: #facc15;
+    }
+
+    .btn-link {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      padding: 0.15rem 0;
+    }
+
+    /* Affiliate Picks */
+    .picks-note {
+      margin-top: 0.75rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      background: var(--accent-soft);
+      border-radius: 0.75rem;
+      padding: 0.6rem 0.75rem;
+      border: 1px dashed rgba(248, 250, 252, 0.2);
+    }
+
+    /* Content / Social */
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .social-list {
+      list-style: none;
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .social-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    .social-handle {
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    /* Newsletter / Contact */
+    .newsletter {
+      margin-top: 1.5rem;
+      padding: 1rem 1rem;
+      border-radius: var(--radius-lg);
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid var(--border);
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .newsletter p {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .newsletter-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .newsletter input[type="email"] {
+      flex: 1 1 180px;
+      padding: 0.6rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: #020617;
+      color: var(--text);
+      font-size: 0.85rem;
+    }
+
+    .newsletter input[type="email"]::placeholder {
+      color: #6b7280;
+    }
+
+    /* Legal / Footer */
+    .legal {
+      margin-top: 3rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      padding-top: 1.5rem;
+    }
+
+    .legal small {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    footer {
+      margin-top: 0.75rem;
+      font-size: 0.75rem;
+      color: #6b7280;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-card {
+        order: -1;
+      }
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .two-col {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+      }
+      .grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      main {
+        padding-inline: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav class="nav">
+    <div class="nav-left">
+      <div class="logo-circle">
+        <img src="Swimmys_Studio.png" alt="Swimmy's Studio logo" />
+      </div>
+      <div>
+        <div class="brand-title">Swimmy's Studio</div>
+        <div class="brand-sub">@swimmys_studio</div>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#builds">Builds</a>
+      <a href="#picks">Affiliate Picks</a>
+      <a href="#content">Content</a>
+      <a href="#contact">Stay in Touch</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div>
+      <div class="hero-tag">
+        <span>🧱 Brick builds • 🎮 Gaming • 🐟 Koi vibes</span>
+      </div>
+      <h1 class="hero-title">
+        Welcome to <span>Swimmy's Studio</span>
+      </h1>
+      <p class="hero-text">
+        I’m Swimmy, your friendly brick-addicted creator. Here you’ll find my
+        favorite LEGO® sets, display pieces, and creator tech — all curated and
+        linked with affiliate partners so you can support the channel while you
+        build.
+      </p>
+      <div class="hero-cta">
+        <a href="#picks" class="btn-primary">
+          Browse Featured Picks →
+        </a>
+        <a href="#content" class="btn-ghost">
+          Watch &amp; Follow the Studio
+        </a>
+      </div>
+      <div class="hero-meta">
+        <span>Heads up:</span> Some links are affiliate links, which means I may
+        earn a small commission at no extra cost to you. Thanks for the support!
+      </div>
+    </div>
+
+    <aside class="hero-card" aria-label="Brand summary">
+      <div class="hero-koi-orbit">
+        <div class="hero-koi">
+          <img src="Swimmys_Studio.png" alt="Swimmy's Studio koi logo" />
+        </div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+      </div>
+      <h3>Build. Chill. Repeat.</h3>
+      <p>
+        From relaxing koi-themed builds to massive brick projects and gaming
+        setups, Swimmy’s Studio is all about creative vibes and clean displays.
+      </p>
+      <div class="pill-row">
+        <span class="pill">LEGO® display ideas</span>
+        <span class="pill">Affiliate deal alerts</span>
+        <span class="pill">Gaming &amp; desk setups</span>
+        <span class="pill">It's a place to watch your ideas grow. Like Koi fish in a pond.</span>
+      </div>
+      <div class="disclaimer-chip">
+        <span class="dot"></span>
+        <span>LEGO® is a trademark of the LEGO Group, which does not sponsor or endorse this site.</span>
+      </div>
+    </aside>
+  </section>
+
+  <!-- FEATURED BUILDS -->
+  <section id="builds">
+    <div class="section-label">Featured Builds</div>
+    <h2 class="section-title">Signature Sets on My Radar</h2>
+    <p class="section-description">
+      These are the types of sets I love to build, mod, and display. Replace the
+      placeholders below with your current favorite LEGO® or other brick sets
+      and plug in your affiliate links.
+    </p>
+
+    <div class="grid">
+      <!-- CARD 1 -->
+      <article class="card">
+        <div>
+          <div class="card-tag">Display Set</div>
+          <h3 class="card-title">Koi Pond Inspired Modular Build</h3>
+          <p class="card-text">
+            A peaceful water-themed build with transparent tiles, foliage, and
+            koi-colored accents. Perfect for shelving or desk display.
+          </p>
+        </div>
+        <div class="card-meta">
+          <span class="price-tag">Example: $79.99</span>
+          <a class="btn-link" href="https://example-affiliate-link-1.com" target="_blank" rel="noopener noreferrer">
+            Affiliate Link
+          </a>
+        </div>
+      </article>
+
+      <!-- CARD 2 -->
+      <article class="card">
+        <div>
+          <div class="card-tag">Creator Set</div>
+          <h3 class="card-title">City Street &amp; Gaming Den</h3>
+          <p class="card-text">
+            A build that combines a modern gaming room with street details,
+            neon signage, and a studio corner for streaming.
+          </p>
+        </div>
+        <div class="card-meta">
+          <span class="price-tag">Example: $119.99</span>
+          <a class="btn-link" href="https://example-affiliate-link-2.com" target="_blank" rel="noopener noreferrer">
+            Affiliate Link
+          </a>
+        </div>
+      </article>
+
+      <!-- CARD 3 -->
+      <article class="card">
+        <div>
+          <div class="card-tag">Collectible</div>
+          <h3 class="card-title">Brick-Built Koi Sculpture</h3>
+          <p class="card-text">
+            A koi centerpiece inspired by the Swimmy’s Studio logo — bold
+            colors, curved forms, and perfect for lighting with LED strips.
+          </p>
+        </div>
+        <div class="card-meta">
+          <span class="price-tag">Example: $49.99</span>
+          <a class="btn-link" href="https://example-affiliate-link-3.com" target="_blank" rel="noopener noreferrer">
+            Affiliate Link
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- AFFILIATE PICKS -->
+  <section id="picks">
+    <div class="section-label">Affiliate Picks</div>
+    <h2 class="section-title">Gear I Actually Use &amp; Recommend</h2>
+    <p class="section-description">
+      Beyond official sets, I also share accessories and gear that make building
+      and displaying way more fun — think lighting kits, storage, mats, and
+      streaming equipment.
+    </p>
+
+    <div class="grid">
+      <article class="card">
+        <div>
+          <div class="card-tag">Lighting</div>
+          <h3 class="card-title">LED Strip Kit for Shelves</h3>
+          <p class="card-text">
+            Soft, adjustable lighting to make your builds pop on camera and in
+            person. Great for bookcases and floating shelves.
+          </p>
+        </div>
+        <div class="card-meta">
+          <span class="price-tag">Example: $29.99</span>
+          <a class="btn-link" href="https://example-affiliate-link-4.com" target="_blank" rel="noopener noreferrer">
+            Affiliate Link
+          </a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div>
+          <div class="card-tag">Organization</div>
+          <h3 class="card-title">Stackable Parts Bins</h3>
+          <p class="card-text">
+            Clear stackable containers that keep small pieces organized so you
+            can sort by color, type, or theme.
+          </p>
+        </div>
+        <div class="card-meta">
+          <span class="price-tag">Example: $39.99</span>
+          <a class="btn-link" href="https://example-affiliate-link-5.com" target="_blank" rel="noopener noreferrer">
+            Affiliate Link
+          </a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div>
+          <div class="card-tag">Creator Tech</div>
+          <h3 class="card-title">Overhead Camera Mount</h3>
+          <p class="card-text">
+            Capture clean top-down build shots for tutorials, time-lapses, and
+            live streams straight from the Studio.
+          </p>
+        </div>
+        <div class="card-meta">
+          <span class="price-tag">Example: $59.99</span>
+          <a class="btn-link" href="https://example-affiliate-link-6.com" target="_blank" rel="noopener noreferrer">
+            Affiliate Link
+          </a>
+        </div>
+      </article>
+    </div>
+
+    <div class="picks-note">
+      <strong>How to use this section:</strong> Replace each
+      <code>https://example-affiliate-link-#.com</code> URL with your real
+      affiliate links from LEGO, Amazon, or other programs. You can also swap
+      titles, descriptions, and prices to match the exact products you’re
+      promoting.
+    </div>
+  </section>
+
+  <!-- CONTENT & SOCIAL -->
+  <section id="content">
+    <div class="section-label">Content</div>
+    <h2 class="section-title">Where to Watch &amp; Hang Out</h2>
+    <p class="section-description">
+      Builds, behind-the-scenes, and chill streams — follow Swimmy’s Studio
+      across platforms to see new projects and affiliate spotlights in action.
+    </p>
+
+    <div class="two-col">
+      <div>
+        <h3 style="font-size: 1rem; margin-bottom: 0.35rem;">Video &amp; Streaming</h3>
+        <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem;">
+          Plug in your main channel URLs below. You can also embed actual
+          players later if your platform supports it.
+        </p>
+        <ul class="social-list">
+          <li>
+            <span class="social-handle">YouTube:</span>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+              youtube.com/@Swimmys_Studio
+            </a>
+          </li>
+          <li>
+            <span class="social-handle">Twitch:</span>
+            <a href="https://www.twitch.tv/" target="_blank" rel="noopener noreferrer">
+              twitch.tv/Swimmys_Studio
+            </a>
+          </li>
+          <li>
+            <span class="social-handle">TikTok:</span>
+            <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer">
+              tiktok.com/@Swimmys_Studio
+            </a>
+          </li>
+          <li>
+            <span class="social-handle">Instagram:</span>
+            <a href="https://www.instagram.com/swimmys_studio/" target="_blank" rel="noopener noreferrer">
+              instagram.com/swimmys_studio
+            </a>
+          </li>
+          <li>
+            <span class="social-handle">Pinterest:</span>
+            <a href="https://pin.it/238A4Vtf1" target="_blank" rel="noopener noreferrer">
+              pinterest.com/swimmys_studio
+            </a>
+          </li>
+        </ul>
+
+        <p style="font-size: 0.8rem; color: var(--muted); margin-top: 0.75rem;">
+          Swap these placeholder URLs (like YouTube/Twitch) with your real channels once they’re live.
+        </p>
+      </div>
+
+      <div>
+        <h3 style="font-size: 1rem; margin-bottom: 0.35rem;">Posting Schedule</h3>
+        <p style="font-size: 0.9rem; color: var(--muted);">
+          Example schedule you can tweak:
+        </p>
+        <ul class="social-list" style="margin-top: 0.4rem;">
+          <li>🧱 <strong>Build Videos:</strong> 1–2 times per week</li>
+          <li>🎮 <strong>Chill Streams:</strong> Weekend evenings</li>
+          <li>📸 <strong>Shorts &amp; Reels:</strong> Quick WIP shots &amp; set highlights</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER / CONTACT -->
+  <section id="contact">
+    <div class="section-label">Stay in Touch</div>
+    <h2 class="section-title">Get Build Updates &amp; Deals</h2>
+    <p class="section-description">
+      Drop your email and I’ll send occasional updates when new builds drop,
+      affiliate deals go live, or I post a big project tutorial.
+    </p>
+
+    <div class="newsletter">
+      <div>
+        <strong style="font-size: 0.9rem;">Studio Newsletter</strong>
+        <p>
+          This form is just a visual example. Connect it to your email provider
+          (like Mailchimp, ConvertKit, etc.) to start collecting sign-ups.
+        </p>
+      </div>
+      <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Replace this alert with your real email integration.');">
+        <input type="email" placeholder="your@email.com" required />
+        <button class="btn-primary" type="submit">Notify Me</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- LEGAL / FOOTER -->
+  <section class="legal">
+    <small>
+      This site includes affiliate links. If you purchase through these links, I may earn a small commission at no additional cost to you. Thank you for supporting Swimmy’s Studio and future builds.
+    </small>
+    <small>
+      LEGO® is a trademark of the LEGO Group of companies which does not sponsor, authorize, or endorse this website.
+    </small>
+
+    <footer>
+      <span>© <span id="year"></span> Swimmy's Studio / @swimmys_studio</span>
+      <span>Built with bricks, pixels, and koi energy.</span>
+    </footer>
+  </section>
+</main>
+
+<script>
+  // current year in footer
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // smooth scroll for in-page nav
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+      const targetId = this.getAttribute("href");
+      if (targetId.length > 1) {
+        e.preventDefault();
+        const el = document.querySelector(targetId);
+        if (el) {
+          window.scrollTo({
+            top: el.offsetTop - 70,
+            behavior: "smooth",
+          });
+        }
+      }
+    });
+  });
+</script>
+</body>
+</html>
