@@ -485,56 +485,65 @@
       opacity: 0.8;
     }
 
+    /* Koi fish in the water stream */
     .fish {
       position: absolute;
-      width: 28px;
-      height: 14px;
-      background: #fb923c;
+      width: 42px;
+      height: 20px;
+  /* orange koi body with light patch */
+      background:
+        radial-gradient(circle at 30% 40%, #fef9c3 0 40%, transparent 45%) ,
+        #fb923c;
       border-radius: 999px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
       z-index: 2;
     }
 
+/* tail */
     .fish::before {
       content: "";
       position: absolute;
-      right: -9px;
+      right: -10px;
       top: 50%;
       width: 0;
       height: 0;
-      border-top: 7px solid transparent;
-      border-bottom: 7px solid transparent;
-      border-left: 9px solid #f97316;
+      border-top: 9px solid transparent;
+      border-bottom: 9px solid transparent;
+      border-left: 10px solid #f97316;
       transform: translateY(-50%);
     }
 
+/* eye + little head highlight */
     .fish::after {
       content: "";
       position: absolute;
-      left: 6px;
-      top: 4px;
+      left: 8px;
+      top: 6px;
       width: 6px;
       height: 6px;
       border-radius: 999px;
-      background: #fee2e2;
-      opacity: 0.85;
+      background: radial-gradient(circle at 40% 40%, #0f172a 0 45%, #fee2e2 50% 100%);
+      opacity: 0.95;
     }
 
-    .fish-1 { top: 8px; animation: swim-right 18s linear infinite; }
-    .fish-2 { top: 24px; animation: swim-right 22s linear infinite; opacity: 0.9; }
-    .fish-3 { top: 16px; animation: swim-right 26s linear infinite; opacity: 0.85; }
-    .fish-4 { top: 6px; animation: swim-right 20s linear infinite; opacity: 0.75; }
-    .fish-5 { top: 28px; animation: swim-right 24s linear infinite; opacity: 0.8; }
+/* slightly different lanes + speeds so they feel alive */
+    .fish-1 { top: 6px;  animation: swim-right 11s linear infinite; }
+    .fish-2 { top: 22px; animation: swim-right 13s linear infinite; opacity: 0.95; }
+    .fish-3 { top: 14px; animation: swim-right 15s linear infinite; opacity: 0.9; }
+    .fish-4 { top: 4px;  animation: swim-right 12s linear infinite; opacity: 0.85; }
+    .fish-5 { top: 26px; animation: swim-right 14s linear infinite; opacity: 0.88; }
 
-    .fish-2 { animation-delay: -6s; }
-    .fish-3 { animation-delay: -12s; }
-    .fish-4 { animation-delay: -3s; }
-    .fish-5 { animation-delay: -15s; }
+    .fish-2 { animation-delay: -4s; }
+    .fish-3 { animation-delay: -8s; }
+    .fish-4 { animation-delay: -2s; }
+    .fish-5 { animation-delay: -10s; }
 
-    @keyframes swim-right {
-      0% { transform: translateX(-40px); }
-      100% { transform: translateX(110%); }
-    }
+/* faster swimming animation */
+@keyframes swim-right {
+  0%   { transform: translateX(-50px); }
+  100% { transform: translateX(110%); }
+}
+
 
     .koi-banner--bottom {
       margin-top: 2rem;
