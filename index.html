@@ -441,6 +441,72 @@
       border: 1px dashed rgba(248, 250, 252, 0.2);
     }
 
+    /* Animated koi banners */
+    .koi-banner {
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: var(--radius-xl);
+      background: radial-gradient(circle at 20% 0, #172554, #020617);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 0.75rem 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .koi-banner-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .koi-banner-text {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .koi-banner-text strong {
+      color: #e5e7eb;
+    }
+
+    .koi-strip {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      min-width: 200%;
+      animation: swim-strip 24s linear infinite;
+      pointer-events: none;
+    }
+
+    .koi-strip img {
+      height: 52px;
+      width: auto;
+      opacity: 0.9;
+      filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.6));
+    }
+
+    .koi-banner--thin {
+      margin-top: 2rem;
+      padding: 0.4rem 0;
+      opacity: 0.95;
+    }
+
+    .koi-banner--thin .koi-strip img {
+      height: 40px;
+      opacity: 0.8;
+    }
+
+    @keyframes swim-strip {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
     /* Social section */
     .social-list {
       list-style: none;
@@ -528,6 +594,13 @@
       .grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
+      .koi-banner-inner {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+      }
+      .koi-strip {
+        min-width: 160%;
+      }
     }
 
     @media (max-width: 640px) {
@@ -539,6 +612,12 @@
       }
       main {
         padding-inline: 1rem;
+      }
+      .koi-strip img {
+        height: 42px;
+      }
+      .koi-banner--thin .koi-strip img {
+        height: 32px;
       }
     }
   </style>
@@ -620,6 +699,31 @@
         <span>Recommendations are based on what I use, test, or genuinely think looks promising.</span>
       </div>
     </aside>
+  </section>
+
+  <!-- ANIMATED KOI BANNER (TOP) -->
+  <section class="koi-banner" aria-hidden="true">
+    <div class="koi-banner-inner">
+      <div class="koi-banner-text">
+        <strong>Koi current:</strong> New tech is always flowing through the Studio — from tiny quality-of-life upgrades to big setup overhauls.
+      </div>
+      <div class="koi-strip">
+        <!-- Repeat koi logos to create a continuous swimming effect -->
+        <img src="Swimmys_Studio.png" alt="" />
+        <img src="Swimmys_Studio.png" alt="" />
+        <img src="Swimmys_Studio.png" alt="" />
+        <img src="Swimmys_Studio.png" alt="" />
+        <img src="Swimmys_Studio.png" alt="" />
+        <img src="Swimmys_Studio.png" alt="" />
+        <!-- duplicate sequence for seamless loop -->
+        <img src="Swimmys_Studio.png" alt="" />
+        <img src="Swimmys_Studio.png" alt="" />
+        <img src="Swimmys_Studio.png" alt="" />
+        <img src="Swimmys_Studio.png" alt="" />
+        <img src="Swimmys_Studio.png" alt="" />
+        <img src="Swimmys_Studio.png" alt="" />
+      </div>
+    </div>
   </section>
 
   <!-- EVERYDAY TECH -->
@@ -851,6 +955,29 @@
           </a>
         </li>
       </ul>
+    </div>
+  </section>
+
+  <!-- ANIMATED KOI BANNER (BOTTOM) -->
+  <section class="koi-banner koi-banner--thin" aria-hidden="true">
+    <div class="koi-banner-inner">
+      <div class="koi-banner-text">
+        <strong>Swim with the stream:</strong> New gadgets, tweaks, and setup ideas flow through here all the time.
+      </div>
+      <div class="koi-strip">
+        <img src="Swimmys_Studio.png" alt="" />
+        <img src="Swimmys_Studio.png" alt="" />
+        <img src="Swimmys_Studio.png" alt="" />
+        <img src="Swimmys_Studio.png" alt="" />
+        <img src="Swimmys_Studio.png" alt="" />
+        <img src="Swimmys_Studio.png" alt="" />
+        <img src="Swimmys_Studio.png" alt="" />
+        <img src="Swimmys_Studio.png" alt="" />
+        <img src="Swimmys_Studio.png" alt="" />
+        <img src="Swimmys_Studio.png" alt="" />
+        <img src="Swimmys_Studio.png" alt="" />
+        <img src="Swimmys_Studio.png" alt="" />
+      </div>
     </div>
   </section>
 
