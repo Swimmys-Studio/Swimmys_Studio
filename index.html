@@ -79,8 +79,8 @@
     }
 
     .logo-circle {
-      width: 40px;
-      height: 40px;
+      width: 48px;
+      height: 48px;
       border-radius: 999px;
       background: radial-gradient(circle at 30% 30%, #ffe3c8, #ff6b35);
       display: flex;
@@ -250,16 +250,22 @@
     }
 
     .hero-koi {
-      width: 160px;
-      height: 160px;
+      width: 180px;
+      height: 180px;
       border-radius: 999px;
       background: radial-gradient(circle at 30% 20%, #ffe7d5, #ff6b35);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2.6rem;
-      transform: rotate(-14deg);
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+      overflow: hidden;
+    }
+
+    .hero-koi img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.05);
     }
 
     .bubble {
@@ -555,11 +561,12 @@
   <nav class="nav">
     <div class="nav-left">
       <div class="logo-circle">
-        <img src="logo.png" alt="Swimmy's Studio logo" />
+        <!-- Updated logo image -->
+        <img src="Swimmys_Studio.png" alt="Swimmy's Studio logo" />
       </div>
       <div>
         <div class="brand-title">Swimmy's Studio</div>
-        <div class="brand-sub">@Swimmys_Studio</div>
+        <div class="brand-sub">@swimmys_studio</div>
       </div>
     </div>
     <div class="nav-links">
@@ -603,7 +610,10 @@
 
     <aside class="hero-card" aria-label="Brand summary">
       <div class="hero-koi-orbit">
-        <div class="hero-koi">🐟</div>
+        <div class="hero-koi">
+          <!-- Updated hero center logo -->
+          <img src="Swimmys_Studio.png" alt="Swimmy's Studio koi logo" />
+        </div>
         <div class="bubble"></div>
         <div class="bubble"></div>
         <div class="bubble"></div>
@@ -617,7 +627,8 @@
         <span class="pill">LEGO® display ideas</span>
         <span class="pill">Affiliate deal alerts</span>
         <span class="pill">Gaming &amp; desk setups</span>
-        <span class="pill">Koi-inspired aesthetics</span>
+        <!-- Updated text here -->
+        <span class="pill">It's a place to watch your ideas grow. Like Koi fish in a pond.</span>
       </div>
       <div class="disclaimer-chip">
         <span class="dot"></span>
@@ -800,10 +811,24 @@
               tiktok.com/@Swimmys_Studio
             </a>
           </li>
+          <!-- NEW: Instagram -->
+          <li>
+            <span class="social-handle">Instagram:</span>
+            <a href="https://www.instagram.com/swimmys_studio/" target="_blank" rel="noopener noreferrer">
+              instagram.com/swimmys_studio
+            </a>
+          </li>
+          <!-- NEW: Pinterest -->
+          <li>
+            <span class="social-handle">Pinterest:</span>
+            <a href="https://pin.it/238A4Vtf1" target="_blank" rel="noopener noreferrer">
+              pinterest.com/swimmys_studio
+            </a>
+          </li>
         </ul>
 
         <p style="font-size: 0.8rem; color: var(--muted); margin-top: 0.75rem;">
-          Swap these placeholder URLs with your real channels once they’re live.
+          Swap these placeholder URLs (like YouTube/Twitch) with your real channels once they’re live.
         </p>
       </div>
 
@@ -855,7 +880,7 @@
     </small>
 
     <footer>
-      <span>© <span id="year"></span> Swimmy's Studio / @Swimmys_Studio</span>
+      <span>© <span id="year"></span> Swimmy's Studio / @swimmys_studio</span>
       <span>Built with bricks, pixels, and koi energy.</span>
     </footer>
   </section>
