@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Swimmy's Studio | Tech Picks Archive</title>
+  <title>Swimmy's Studio | Everyday Tech & Gaming Gear</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="Browse the full archive of everyday tech, gaming gear, and Amazon affiliate picks from Swimmy's Studio, organized by category."
+    content="Swimmy's Studio shares the latest everyday tech, gaming gear, and smart upgrades that make life smoother. Explore curated Amazon affiliate picks and discover new gadgets highlighted on Instagram and Pinterest."
   />
-  <!-- Same styles as index for consistent look -->
   <style>
     :root {
       --bg: #050816;
@@ -48,6 +47,7 @@
       text-decoration: none;
     }
 
+    /* Header / nav */
     header {
       position: sticky;
       top: 0;
@@ -120,8 +120,7 @@
       transition: 0.2s ease;
     }
 
-    .nav-links a:hover,
-    .nav-links a.is-active {
+    .nav-links a:hover {
       color: var(--text);
       background: rgba(148, 163, 184, 0.18);
     }
@@ -132,68 +131,220 @@
       padding: 2.5rem 1.25rem 3.5rem;
     }
 
-    /* Archive hero */
-    .archive-hero {
-      margin-top: 1.5rem;
-      margin-bottom: 2rem;
-      padding: 1.5rem 1.25rem 1.5rem;
-      border-radius: var(--radius-xl);
-      border: 1px solid var(--border);
-      background: radial-gradient(circle at top, #1f2937, #020617);
-      box-shadow: var(--shadow-soft);
+    /* Hero */
+    .hero {
       display: grid;
-      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
-      gap: 1.5rem;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2.5rem;
       align-items: center;
+      margin-top: 1rem;
     }
 
-    .archive-hero h1 {
-      font-size: 1.7rem;
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      background: rgba(15, 118, 110, 0.15);
+      color: #6ee7b7;
+      border: 1px solid rgba(45, 212, 191, 0.35);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 3vw, 2.6rem);
       font-weight: 800;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
     }
 
-    .archive-hero p {
-      font-size: 0.92rem;
+    .hero-title span {
+      color: var(--accent);
+    }
+
+    .hero-text {
+      font-size: 0.98rem;
       color: var(--muted);
-      max-width: 40rem;
+      max-width: 32rem;
+      margin-bottom: 1.25rem;
     }
 
-    .archive-badges {
+    .hero-cta {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.7rem;
-      font-size: 0.75rem;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
     }
 
-    .archive-badge {
-      padding: 0.25rem 0.6rem;
+    .btn-primary,
+    .btn-ghost {
+      padding: 0.7rem 1.4rem;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      color: #e5e7eb;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ff6b35, #ffa62b);
+      color: #111827;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.55);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 34px rgba(0, 0, 0, 0.75);
+    }
+
+    .btn-ghost {
+      background: rgba(15, 23, 42, 0.75);
+      color: var(--muted);
+      border-color: rgba(148, 163, 184, 0.35);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 0.95);
+      color: var(--text);
+    }
+
+    .hero-meta {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .hero-meta span {
+      color: #fde68a;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top, #1f2937, #020617);
+      border-radius: var(--radius-xl);
+      padding: 1.75rem 1.5rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-koi-orbit {
+      width: 260px;
+      height: 260px;
+      border-radius: 999px;
+      border: 1px dashed rgba(148, 163, 184, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+      position: relative;
+    }
+
+    .hero-koi {
+      width: 180px;
+      height: 180px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #ffe7d5, #ff6b35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+      overflow: hidden;
+    }
+
+    .hero-koi img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.05);
+    }
+
+    .bubble {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
       background: rgba(15, 23, 42, 0.9);
     }
 
-    .archive-hero-right {
-      text-align: right;
+    .bubble:nth-child(2) {
+      top: 15%;
+      right: 12%;
+    }
+
+    .bubble:nth-child(3) {
+      bottom: 10%;
+      left: 14%;
+      width: 14px;
+      height: 14px;
+    }
+
+    .bubble:nth-child(4) {
+      top: 52%;
+      left: 6%;
+      width: 8px;
+      height: 8px;
+    }
+
+    .hero-card h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #e5e7eb;
+    }
+
+    .hero-card p {
       font-size: 0.8rem;
       color: var(--muted);
+      margin-bottom: 0.8rem;
     }
 
-    .archive-hero-right span {
-      display: block;
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.8rem;
     }
 
-    .archive-hero-right strong {
-      color: #facc15;
+    .pill {
+      font-size: 0.7rem;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: #d1d5db;
+      background: rgba(15, 23, 42, 0.8);
     }
 
-    /* Section headings */
+    .disclaimer-chip {
+      margin-top: 0.25rem;
+      font-size: 0.7rem;
+      color: var(--muted);
+      background: rgba(15, 23, 42, 0.85);
+      border-radius: 999px;
+      padding: 0.25rem 0.55rem;
+      display: inline-flex;
+      gap: 0.35rem;
+      align-items: center;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #fbbf24;
+    }
+
+    /* Sections */
     section {
-      margin-top: 2.75rem;
+      margin-top: 3rem;
     }
 
     .section-label {
@@ -205,22 +356,23 @@
     }
 
     .section-title {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       font-weight: 700;
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.75rem;
     }
 
     .section-description {
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       color: var(--muted);
       max-width: 40rem;
     }
 
+    /* Cards / grids */
     .grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1.25rem;
-      margin-top: 1.4rem;
+      margin-top: 1.5rem;
     }
 
     .card {
@@ -278,20 +430,258 @@
       padding: 0.15rem 0;
     }
 
-    .archive-note {
-      margin-top: 0.75rem;
-      font-size: 0.78rem;
+    /* archive rows */
+    .archive-row {
+      margin-top: 1rem;
+      padding: 0.75rem 0.9rem;
+      border-radius: 0.9rem;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px dashed rgba(148, 163, 184, 0.45);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5rem;
+      align-items: center;
+      font-size: 0.82rem;
       color: var(--muted);
-      border-left: 2px solid rgba(148, 163, 184, 0.6);
-      padding-left: 0.7rem;
     }
 
+    .archive-row a {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+    }
+
+    /* KOI BANNERS — water + CSS koi fish */
+
+    .koi-banner {
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: var(--radius-xl);
+      background: radial-gradient(circle at 20% 0, #172554, #020617);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 0.85rem 1.25rem 1.25rem;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .koi-banner p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      max-width: 55rem;
+    }
+
+    .koi-banner strong {
+      color: #e5e7eb;
+    }
+
+    .koi-stream {
+      margin-top: 0.7rem;
+      width: 100%;
+      height: 64px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      box-shadow: inset 0 0 25px rgba(15, 23, 42, 0.95);
+      background:
+        radial-gradient(circle at 15% 20%, rgba(56, 189, 248, 0.35) 0 22%, transparent 25%),
+        radial-gradient(circle at 70% 80%, rgba(45, 212, 191, 0.35) 0 22%, transparent 25%),
+        linear-gradient(135deg, #020617, #06263a 35%, #022c3b 55%, #020617 80%);
+    }
+
+    .koi-stream::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.16) 0 20%, transparent 45%),
+        radial-gradient(circle at 80% 60%, rgba(148, 163, 184, 0.18) 0 18%, transparent 45%);
+      opacity: 0.35;
+      mix-blend-mode: screen;
+      pointer-events: none;
+      animation: water-flow 18s linear infinite;
+    }
+
+    @keyframes water-flow {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-15%); }
+    }
+
+    /* CSS KOI FISH */
+
+    .koi {
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      width: 80px;
+      height: 28px;
+      background:
+        radial-gradient(circle at 25% 40%, #f97316 0 18%, transparent 22%),
+        radial-gradient(circle at 60% 60%, #fb923c 0 20%, transparent 24%),
+        radial-gradient(circle at 80% 35%, #dc2626 0 18%, transparent 22%),
+        #fefefe;
+      border-radius: 999px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+      transform: translate(-50%, -50%) scaleX(1);
+    }
+
+    .koi::before {
+      content: "";
+      position: absolute;
+      right: -18px;
+      top: 50%;
+      width: 32px;
+      height: 24px;
+      border-radius: 999px;
+      background:
+        radial-gradient(circle at 70% 40%, #0f172a 0 22%, transparent 30%),
+        radial-gradient(circle at 45% 55%, #fee2e2 0 45%, #f97316 50% 100%);
+      transform: translateY(-50%);
+    }
+
+    .koi::after {
+      content: "";
+      position: absolute;
+      left: -20px;
+      top: 50%;
+      width: 30px;
+      height: 24px;
+      border-radius: 999px;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(255,255,255,0.9) 0 40%, transparent 60%),
+        rgba(248, 250, 252, 0.85);
+      transform-origin: 100% 50%;
+      transform: translateY(-50%);
+      box-shadow: 4px 0 6px rgba(15, 23, 42, 0.6);
+      animation: tail-flick 0.45s ease-in-out infinite;
+    }
+
+    @keyframes swim-bounce {
+      0% {
+        left: -5%;
+        transform: translate(-50%, -50%) scaleX(1);
+      }
+      45% {
+        left: 105%;
+        transform: translate(-50%, -50%) scaleX(1);
+      }
+      50% {
+        left: 105%;
+        transform: translate(-50%, -50%) scaleX(-1);
+      }
+      95% {
+        left: -5%;
+        transform: translate(-50%, -50%) scaleX(-1);
+      }
+      100% {
+        left: -5%;
+        transform: translate(-50%, -50%) scaleX(1);
+      }
+    }
+
+    @keyframes tail-flick {
+      0%   { transform: translateY(-50%) rotate(6deg); }
+      50%  { transform: translateY(-50%) rotate(-8deg); }
+      100% { transform: translateY(-50%) rotate(6deg); }
+    }
+
+    .koi-1,
+    .koi-2,
+    .koi-3 {
+      animation: swim-bounce var(--swim-duration, 8s) linear infinite;
+    }
+
+    .koi-1 {
+      top: 38%;
+      --swim-duration: 7s;
+      opacity: 0.97;
+      animation-delay: 0s;
+    }
+
+    .koi-2 {
+      top: 58%;
+      --swim-duration: 8s;
+      opacity: 0.92;
+      animation-delay: -2s;
+    }
+
+    .koi-3 {
+      top: 30%;
+      --swim-duration: 9s;
+      opacity: 0.88;
+      width: 70px;
+      animation-delay: -4s;
+    }
+
+    .koi-banner--bottom .koi-stream {
+      height: 56px;
+    }
+
+    /* Social / content */
+    .social-list {
+      list-style: none;
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .social-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    .social-handle {
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    /* Newsletter */
+    .newsletter {
+      margin-top: 1.5rem;
+      padding: 1rem 1rem;
+      border-radius: var(--radius-lg);
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid var(--border);
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .newsletter p {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .newsletter-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .newsletter input[type="email"] {
+      flex: 1 1 180px;
+      padding: 0.6rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: #020617;
+      color: var(--text);
+      font-size: 0.85rem;
+    }
+
+    .newsletter input[type="email"]::placeholder {
+      color: #6b7280;
+    }
+
+    /* Legal / Footer */
     .legal {
       margin-top: 3rem;
       font-size: 0.75rem;
       color: var(--muted);
       border-top: 1px solid rgba(31, 41, 55, 0.9);
       padding-top: 1.5rem;
+    }
+
+    .legal small {
+      display: block;
+      margin-bottom: 0.25rem;
     }
 
     footer {
@@ -304,13 +694,13 @@
       gap: 0.5rem;
     }
 
+    /* Responsive */
     @media (max-width: 900px) {
-      .archive-hero {
+      .hero {
         grid-template-columns: minmax(0, 1fr);
-        text-align: left;
       }
-      .archive-hero-right {
-        text-align: left;
+      .hero-card {
+        order: -1;
       }
       .grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -321,11 +711,21 @@
       .nav-links {
         display: none;
       }
+      .grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
       main {
         padding-inline: 1rem;
       }
-      .grid {
-        grid-template-columns: minmax(0, 1fr);
+      .koi-stream {
+        height: 56px;
+      }
+      .koi-banner--bottom .koi-stream {
+        height: 50px;
+      }
+      .koi {
+        width: 60px;
+        height: 22px;
       }
     }
   </style>
@@ -343,60 +743,107 @@
       </div>
     </div>
     <div class="nav-links">
-      <a href="index.html#top">Home</a>
-      <a href="index.html#everyday">Daily Tech</a>
-      <a href="index.html#gaming">Gaming Gear</a>
-      <a href="index.html#picks">Affiliate Picks</a>
-      <a href="archive.html" class="is-active">Archive</a>
+      <a href="#everyday">Daily Tech</a>
+      <a href="#gaming">Gaming Gear</a>
+      <a href="#picks">Affiliate Picks</a>
+      <a href="#content">Content</a>
+      <a href="#contact">Stay in Touch</a>
     </div>
   </nav>
 </header>
 
 <main>
-  <!-- ARCHIVE HERO -->
-  <section class="archive-hero">
+  <!-- HERO -->
+  <section class="hero" id="top">
     <div>
-      <h1>Tech Picks Archive</h1>
-      <p>
-        This is the “deep pond” — a running archive of everything I’ve shared on Swimmy’s Studio:
-        everyday helpers, gaming gear, smart home upgrades, and more. As new posts go up on
-        Instagram, Pinterest, or the homepage, they’ll get added here by category.
+      <div class="hero-tag">
+        <span>⚙️ Everyday tech • 🎮 Gaming gear • 🐟 Koi vibes</span>
+      </div>
+      <h1 class="hero-title">
+        Everyday Tech That Actually <span>Helps</span>
+      </h1>
+      <p class="hero-text">
+        Welcome to Swimmy's Studio — a chill spot where I share the latest and greatest
+        technology that makes everyday life easier, smoother, and more fun. From smart
+        home gadgets to gaming setups, everything here is curated with real-world use in mind.
       </p>
-      <div class="archive-badges">
-        <span class="archive-badge">Everyday Tech</span>
-        <span class="archive-badge">Gaming &amp; Entertainment</span>
-        <span class="archive-badge">Amazon Affiliate Picks</span>
+      <div class="hero-cta">
+        <a href="#picks" class="btn-primary">
+          Browse Amazon-Friendly Picks →
+        </a>
+        <a href="#content" class="btn-ghost">
+          See What I’m Featuring Next
+        </a>
+      </div>
+      <div class="hero-meta">
+        <span>Heads up:</span> Many links on this site are affiliate links (often through Amazon).
+        If you buy through them, I may earn a small commission at no extra cost to you. Thanks for
+        supporting the Studio!
       </div>
     </div>
-    <div class="archive-hero-right">
-      <span>Organized by category</span>
-      <span><strong>Scroll &amp; discover</strong> picks at your own pace.</span>
+
+    <aside class="hero-card" aria-label="Brand summary">
+      <div class="hero-koi-orbit">
+        <div class="hero-koi">
+          <img src="Swimmys_Studio.png" alt="Swimmy's Studio koi logo" />
+        </div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+      </div>
+      <h3>Build Your Daily Setup.</h3>
+      <p>
+        Think of this as a tech pond — a calm place to explore gadgets that quietly level up
+        your day. Desk upgrades, smart home tools, gaming gear, and more.
+      </p>
+      <div class="pill-row">
+        <span class="pill">Desk &amp; workspace upgrades</span>
+        <span class="pill">Smart home basics</span>
+        <span class="pill">Gaming &amp; streaming tech</span>
+        <span class="pill">It's a place to watch your ideas grow. Like koi fish in a pond.</span>
+      </div>
+      <div class="disclaimer-chip">
+        <span class="dot"></span>
+        <span>Recommendations are based on what I use, test, or genuinely think looks promising.</span>
+      </div>
+    </aside>
+  </section>
+
+  <!-- ANIMATED KOI BANNER (TOP) -->
+  <section class="koi-banner">
+    <p>
+      <strong>Koi current:</strong> New tech is always flowing through the Studio — from tiny
+      quality-of-life upgrades to big setup overhauls.
+    </p>
+    <div class="koi-stream">
+      <div class="koi koi-1"></div>
+      <div class="koi koi-2"></div>
+      <div class="koi koi-3"></div>
     </div>
   </section>
 
-  <!-- EVERYDAY ARCHIVE -->
-  <section id="everyday-archive">
-    <div class="section-label">Archive Category</div>
-    <h2 class="section-title">Everyday Tech Archive</h2>
+  <!-- EVERYDAY TECH -->
+  <section id="everyday">
+    <div class="section-label">Everyday Tech</div>
+    <h2 class="section-title">Simple Upgrades for Daily Life</h2>
     <p class="section-description">
-      All the small upgrades that make daily life smoother — kitchen tools, desk helpers,
-      and on-the-go gear. As I feature more everyday gadgets, they can be added here.
+      These are the kinds of products that quietly make your day better — smarter tools,
+      cleaner setups, and quality-of-life gadgets that save time and reduce stress.
     </p>
 
     <div class="grid">
-      <!-- Copy of current Everyday cards -->
       <article class="card">
         <div>
           <div class="card-tag">Kitchen Upgrade</div>
-          <h3 class="card-title">Kitchen Gizmo Snap N Strain Silicone Colander</h3>
+          <h3 class="card-title">Clip-On Silicone Strainer</h3>
           <p class="card-text">
-            A silicone clip-on strainer that attaches directly to your pot or pan so you can
-            drain pasta, vegetables, or broth without juggling a full-sized colander.
+            A flexible strainer that clips directly to your pot or pan so you can drain pasta,
+            veggies, and more with one hand and without dirtying a full colander.
           </p>
         </div>
         <div class="card-meta">
-          <span class="price-tag">Amazon everyday pick</span>
-          <a class="btn-link" href="https://www.amazon.com/Kitchen-Gizmo-Strainer-Silicone-Colander/dp/B01MZ14LJV?content-id=amzn1.sym.79b3b15c-b438-4704-a2b9-361704a22de6%3Aamzn1.sym.79b3b15c-b438-4704-a2b9-361704a22de6&amp;cv_ct_cx=2025%2Bmust%2Bhave%2Bgadgets&amp;hvadid=616929554302&amp;hvdev=c&amp;hvexpln=0&amp;hvlocphy=9002149&amp;hvnetw=g&amp;hvocijid=15607734188598259447--&amp;hvqmt=b&amp;hvrand=15607734188598259447&amp;hvtargid=kwd-2394600517897&amp;hydadcr=15279_13597141&amp;keywords=2025%2Bmust%2Bhave%2Bgadgets&amp;mcid=b88e40842e9d32ed84ee1db029b7cb68&amp;pd_rd_i=B01MZ14LJV&amp;pd_rd_r=f10226de-6125-404e-9bc6-4401371c6e21&amp;pd_rd_w=klAol&amp;pd_rd_wg=b8NZO&amp;pf_rd_p=79b3b15c-b438-4704-a2b9-361704a22de6&amp;pf_rd_r=YZB7H2HXWA60K04CVXBD&amp;qid=1764041519&amp;sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&amp;sr=1-1-9036c2af-0d6a-4007-a635-d50f3d0f5a3b&amp;th=1&amp;linkCode=ll1&amp;tag=swimmysstudio-20&amp;linkId=322fb56d72bfe755e520115dda91a79f&amp;language=en_US&amp;ref_=as_li_ss_tl" target="_blank" rel="noopener noreferrer">
+          <span class="price-tag">Smart space-saving kitchen helper</span>
+          <a class="btn-link" href="https://www.amazon.com/Kitchen-Gizmo-Strainer-Silicone-Colander/dp/B01MZ14LJV?tag=swimmysstudio-20&linkCode=ll1&linkId=322fb56d72bfe755e520115dda91a79f&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener noreferrer">
             View on Amazon
           </a>
         </div>
@@ -404,16 +851,16 @@
 
       <article class="card">
         <div>
-          <div class="card-tag">Desk &amp; Mobile</div>
-          <h3 class="card-title">LISEN Adjustable Portable Device Stand</h3>
+          <div class="card-tag">Desk &amp; Travel</div>
+          <h3 class="card-title">Adjustable Laptop / Tablet Stand</h3>
           <p class="card-text">
-            A foldable, height-adjustable stand that works great for phones, tablets, and
-            smaller laptops for calls, second-screen setups, or watching streams hands-free.
+            A foldable, height-adjustable stand that keeps your laptop or tablet at a more
+            comfortable angle — great for work-from-home, gaming, or watching shows.
           </p>
         </div>
         <div class="card-meta">
-          <span class="price-tag">Amazon everyday pick</span>
-          <a class="btn-link" href="https://www.amazon.com/LISEN-Adjustable-Portable-Generation-Accessories/dp/B0CST4CYVH?dib=eyJ2IjoiMSJ9.DzvJM-LNblzV3jPpNvsfEWu08v5onkmZJUFNtyBuLwfmOhf7i7ZAcMh40BQqXNcjdVIk5nYS4L32TXF1JSY6bert0XHDpn4-fKd5mgmSrU7qC8VrqcsS_FQo-9gj8LFw_JRBkgwZk2KeDLgynQiYhSqVWKOpl6ng3wO699FMDvtvJK9ftdtEnCdru16UgU6JxnbNAkyKWErN0mFrLNANL92NezbeedAUNamHJ4mDZw_IMceUfDX7D-hbaXkWM-TUedAZaTfiorJHWqikfrStQ0uErD9ieTAguSUEqWTG25Y.1ewkKfxzaeXA9pwdI1LTuMA5LcmHAMp6BZMVUnsa_Gw&amp;dib_tag=se&amp;hvadid=616929554302&amp;hvdev=c&amp;hvexpln=0&amp;hvlocphy=9002149&amp;hvnetw=g&amp;hvocijid=15607734188598259447--&amp;hvqmt=b&amp;hvrand=15607734188598259447&amp;hvtargid=kwd-2394600517897&amp;hydadcr=15279_13597141&amp;keywords=2025%2Bmust%2Bhave%2Bgadgets&amp;mcid=b88e40842e9d32ed84ee1db029b7cb68&amp;qid=1764041519&amp;sr=8-26&amp;th=1&amp;linkCode=ll1&amp;tag=swimmysstudio-20&amp;linkId=f33747e44abda12304d79ce626930652&amp;language=en_US&amp;ref_=as_li_ss_tl" target="_blank" rel="noopener noreferrer">
+          <span class="price-tag">Portable posture-friendly stand</span>
+          <a class="btn-link" href="https://www.amazon.com/LISEN-Adjustable-Portable-Generation-Accessories/dp/B0CST4CYVH?tag=swimmysstudio-20&linkCode=ll1&linkId=f33747e44abda12304d79ce626930652&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener noreferrer">
             View on Amazon
           </a>
         </div>
@@ -421,50 +868,51 @@
 
       <article class="card">
         <div>
-          <div class="card-tag">Car &amp; On-the-Go</div>
-          <h3 class="card-title">ROCGORLD Portable Tire Inflator &amp; Air Compressor</h3>
+          <div class="card-tag">Car &amp; Emergency</div>
+          <h3 class="card-title">Portable Tire Inflator &amp; Air Compressor</h3>
           <p class="card-text">
-            A compact, rechargeable air compressor for quick tire and ball top-ups so you
-            can fix low-pressure issues without emergency gas station runs.
+            A compact cordless inflator so you can top off tires, balls, and more without
+            hunting down a gas station pump — perfect to keep in the trunk.
           </p>
         </div>
         <div class="card-meta">
-          <span class="price-tag">Amazon everyday pick</span>
-          <a class="btn-link" href="https://www.amazon.com/ROCGORLD-Inflator-Portable-Compressor-Inflation/dp/B0C6GS6JR3?dib=eyJ2IjoiMSJ9._24iDNy02UfR8b-77iGOi6fS7CFm7-0rC3TAXond5MBekWRQg-fX46LqPzMcofbFG24euPxreCuKNMyiZc-YHXfklHJlEQImpjh_9Nn_Kc4.QsGv9sOTSTc-E2VpVKzF1WxeB4TpUoReM-_C5nOoqMI&amp;dib_tag=se&amp;hvadid=616929554302&amp;hvdev=c&amp;hvexpln=0&amp;hvlocphy=9002149&amp;hvnetw=g&amp;hvocijid=15607734188598259447--&amp;hvqmt=b&amp;hvrand=15607734188598259447&amp;hvtargid=kwd-2394600517897&amp;hydadcr=15279_13597141&amp;keywords=2025%2Bmust%2Bhave%2Bgadgets&amp;mcid=b88e40842e9d32ed84ee1db029b7cb68&amp;qid=1764041763&amp;sr=8-49-spons&amp;xpid=oSh83pEC6hIVj&amp;sp_csd=d2lkZ2V0TmFtZT1zcF9hdGZfbmV4dA&amp;th=1&amp;linkCode=ll1&amp;tag=swimmysstudio-20&amp;linkId=27ea90a079baae77436857e043a43eba&amp;language=en_US&amp;ref_=as_li_ss_tl" target="_blank" rel="noopener noreferrer">
+          <span class="price-tag">Peace-of-mind glovebox gadget</span>
+          <a class="btn-link" href="https://www.amazon.com/ROCGORLD-Inflator-Portable-Compressor-Inflation/dp/B0C6GS6JR3?tag=swimmysstudio-20&linkCode=ll1&linkId=27ea90a079baae77436857e043a43eba&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener noreferrer">
             View on Amazon
           </a>
         </div>
       </article>
     </div>
 
-    <p class="archive-note">
-      As you add new everyday-life gadgets to your homepage, you can duplicate their cards into this
-      section to keep the archive complete and organized.
-    </p>
+    <div class="archive-row">
+      <span>Want to browse every everyday-tech pick I’ve shared so far?</span>
+      <a href="#everyday-archive">View all everyday picks →</a>
+    </div>
   </section>
 
-  <!-- GAMING ARCHIVE -->
-  <section id="gaming-archive">
-    <div class="section-label">Archive Category</div>
-    <h2 class="section-title">Gaming &amp; Entertainment Archive</h2>
+  <!-- GAMING & ENTERTAINMENT -->
+  <section id="gaming">
+    <div class="section-label">Gaming &amp; Entertainment</div>
+    <h2 class="section-title">Gear for Play, Streams &amp; Chill Sessions</h2>
     <p class="section-description">
-      Controllers, keyboards, headsets, and other gear for gaming and entertainment setups.
-      This is where new gaming-related Amazon finds can live long-term.
+      When it’s time to game or relax, the right hardware makes all the difference.
+      These picks focus on performance, comfort, and immersion — whether you’re grinding
+      ranked or just vibing.
     </p>
 
     <div class="grid">
       <article class="card">
         <div>
           <div class="card-tag">Mouse</div>
-          <h3 class="card-title">MANBASNAKE Wireless Shark Gaming Mouse</h3>
+          <h3 class="card-title">Shark-Inspired Wireless Gaming Mouse</h3>
           <p class="card-text">
-            Wireless ergonomic gaming mouse with a shark-inspired shell, RGB lighting, and
-            programmable buttons for a unique but comfortable desk experience.
+            An ergonomic, programmable wireless mouse with a unique shark-style design —
+            built for long sessions with customizable buttons and RGB.
           </p>
         </div>
         <div class="card-meta">
-          <span class="price-tag">Amazon gaming mouse pick</span>
-          <a class="btn-link" href="https://www.amazon.com/MANBASNAKE-Wireless-Ergonomic-Programmable-Accessories/dp/B0CCF6J2Q6?crid=2ROP37NG5FU2L&amp;dib=eyJ2IjoiMSJ9.QcKz4LrXjM_Cv6uS80CIwAk7jEXFIRSubqkdR_tDrDUuSRmvjUs2w1-0-CP5PoQtklxKucOeWysKbgW2jEs1QremeEj3bzIzFSfJ9GY_Y1xKuUo7-Ye5BPU2bJ3uz1M9pAGziNgugk8WVhMLLBQ5sLD_NIMksE7VyhxoUmzuaBGzQ0zwv9FJ9kdH4uLRLeKVp5oIhcgLTFhdULOpV3F0CEEcs_JFlfZ0G79FeH53DFZi86Ddye5zbdHRgnIwTTEhX9EE65-XgnlG1Qa8Buq26eOKabEz_CgN6avWO2NKc_A.eg7YNnmq3gans2pIHib5F7Ml2VAtNn8CmHFpvvxYj8s&amp;dib_tag=se&amp;keywords=shark%2Bmouse&amp;qid=1764040677&amp;s=electronics&amp;sprefix=shark%2Celectronics%2C167&amp;sr=1-4&amp;th=1&amp;linkCode=ll1&amp;tag=swimmysstudio-20&amp;linkId=44c9a0337a644e173f1ea73ecb22e25e&amp;language=en_US&amp;ref_=as_li_ss_tl" target="_blank" rel="noopener noreferrer">
+          <span class="price-tag">Feature-packed budget mouse</span>
+          <a class="btn-link" href="https://www.amazon.com/MANBASNAKE-Wireless-Ergonomic-Programmable-Accessories/dp/B0CCF6J2Q6?tag=swimmysstudio-20&linkCode=ll1&linkId=44c9a0337a644e173f1ea73ecb22e25e&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener noreferrer">
             View on Amazon
           </a>
         </div>
@@ -475,13 +923,13 @@
           <div class="card-tag">Keyboard</div>
           <h3 class="card-title">EPOMAKER Mechanical Gaming Keyboard</h3>
           <p class="card-text">
-            Gasket-mounted mechanical keyboard with hot-swappable switches, per-key lighting,
-            and wireless options for a customizable typing and gaming feel.
+            A gasket-mounted mechanical keyboard with hot-swappable switches and
+            Bluetooth/2.4G options — great feel plus a clean aesthetic for your desk.
           </p>
         </div>
         <div class="card-meta">
-          <span class="price-tag">Amazon keyboard pick</span>
-          <a class="btn-link" href="https://www.amazon.com/EPOMAKER-Mechanical-Keyboard-Gasket-Mounted-Bluetooth/dp/B0CMWJSQMB?crid=21W7C50VPRKDX&amp;dib=eyJ2IjoiMSJ9.JkSX8CDgDeAeopjFYNvRseDPuPts5kK_3l6gTdQ-2MHxOl4ZTSne60MG1S2dWBrgxKNLWtEWuqZoF5-iKvVeqVAzMcTBQpjJwjiDDnhM6jIdFTOKRJI5idE5kFDGH_eDVZKyDtDWVkBwtkI-S2nONcJI74t_v6vlo8I7GWhOUOYFfDNkP9laiw8S8tPRlPAkLpVEH0Z9cjSc3TXqngx6H_IDK7y6o2SdYCGX3DkPxEFTnj5Cjtuj8EPbXi7ZhT2MMP6r8t06NL4TDwrdxsgaiYJI3lwIY7P7zmnj-BbJeoc.FyaWIvDQyVeEnSydoW5BMM-kp4718LCHoACnPRp4mlk&amp;dib_tag=se&amp;keywords=epo%2Bgaming%2Bkeyboard&amp;qid=1764040785&amp;s=electronics&amp;sprefix=epo%2Bgaming%2Bkeyboard%2Celectronics%2C178&amp;sr=1-3&amp;th=1&amp;linkCode=ll1&amp;tag=swimmysstudio-20&amp;linkId=afff754b55dc71c6878fb9bf90e57883&amp;language=en_US&amp;ref_=as_li_ss_tl" target="_blank" rel="noopener noreferrer">
+          <span class="price-tag">Custom-feel typing out of the box</span>
+          <a class="btn-link" href="https://www.amazon.com/EPOMAKER-Mechanical-Keyboard-Gasket-Mounted-Bluetooth/dp/B0CMWJSQMB?tag=swimmysstudio-20&linkCode=ll1&linkId=afff754b55dc71c6878fb9bf90e57883&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener noreferrer">
             View on Amazon
           </a>
         </div>
@@ -489,54 +937,51 @@
 
       <article class="card">
         <div>
-          <div class="card-tag">Headset</div>
+          <div class="card-tag">Audio</div>
           <h3 class="card-title">Razer BlackShark V2 Gaming Headset</h3>
           <p class="card-text">
-            Lightweight wired headset with strong isolation, a clear mic, and THX spatial audio
-            for competitive and immersive gaming.
+            A lightweight esports-style headset with strong isolation, clear mic,
+            and detailed sound — great for competitive games and everyday listening.
           </p>
         </div>
         <div class="card-meta">
-          <span class="price-tag">Amazon headset pick</span>
-          <a class="btn-link" href="https://www.amazon.com/Razer-BlackShark-V2-Gaming-Headset/dp/B086PKMZ21?crid=38PJQ0O05BZJM&amp;dib=eyJ2IjoiMSJ9.FTYwcgWZVdJPq7jLdZE--Q7pFYd3d2Ydj9W2BXtwCgxjsvBLtgeClq2TZyO39Wqnna74xkLfcUAnlBZ0F7TgyqphiIdOom-6rll2rvpFwhzJ9KCM-aRbfJE_qb35QvvJSuDKRt9PgKdfcdTnBF3HzMeP1f5tm43HMl9rxHhJSpmZ-QLV0Mmbx0J-8tQ66VGME7h-NI0r21JDgWK_jWgJM6FbaDjJ8_7piKVS0M06GgAPopT08pyDF5if6f0Y-HRoPUhhmtvwxWXbS2rfEe1pnypPythV4RUNL4D-AVzdNKc.2SMZjD6Y5qA3-pqB_GWUQEUIy2kBYBBmY1xJjhSS4_U&amp;dib_tag=se&amp;keywords=gaming%2Bheadset&amp;qid=1764040819&amp;s=electronics&amp;sprefix=gaming%2Bheadse%2Celectronics%2C137&amp;sr=1-4&amp;th=1&amp;linkCode=ll1&amp;tag=swimmysstudio-20&amp;linkId=4e9e6862a62a43b7b4aae65e0cca0d2a&amp;language=en_US&amp;ref_=as_li_ss_tl" target="_blank" rel="noopener noreferrer">
+          <span class="price-tag">Esports-ready sound &amp; comfort</span>
+          <a class="btn-link" href="https://www.amazon.com/Razer-BlackShark-V2-Gaming-Headset/dp/B086PKMZ21?tag=swimmysstudio-20&linkCode=ll1&linkId=4e9e6862a62a43b7b4aae65e0cca0d2a&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener noreferrer">
             View on Amazon
           </a>
         </div>
       </article>
-
-      <!-- You can add future gaming picks here as you go -->
     </div>
 
-    <p class="archive-note">
-      As new gaming mice, keyboards, controllers, or audio gear show up in posts, you can add
-      new cards under this section to keep a long-term record of everything you’ve recommended.
-    </p>
+    <div class="archive-row">
+      <span>Looking for older gaming &amp; entertainment recommendations?</span>
+      <a href="#gaming-archive">View all gaming picks →</a>
+    </div>
   </section>
 
-  <!-- FULL AFFILIATE ARCHIVE -->
-  <section id="picks-archive">
-    <div class="section-label">Archive Category</div>
-    <h2 class="section-title">Full Tech Picks Archive</h2>
+  <!-- AFFILIATE PICKS -->
+  <section id="picks">
+    <div class="section-label">Curated Affiliate Picks</div>
+    <h2 class="section-title">Handpicked Tech Worth Checking Out</h2>
     <p class="section-description">
-      Every Amazon affiliate pick featured on Swimmy’s Studio — smart home, desk upgrades,
-      kitchen tools, creative gadgets, and more, all in one place.
+      This is where I highlight specific products that stand out — either because I use them
+      personally, they’re highly rated, or they solve a problem in a clean way. Most of these
+      links go through Amazon.
     </p>
 
     <div class="grid">
-      <!-- Reuse main affiliate picks here -->
-
       <article class="card">
         <div>
-          <div class="card-tag">Streaming &amp; Smart Home</div>
+          <div class="card-tag">Streaming Bundle</div>
           <h3 class="card-title">Amazon Entertainment Device Bundle</h3>
           <p class="card-text">
-            A compact bundle that pulls your streaming, music, and smart-home control into one
-            simple setup for movies, shows, and background music.
+            A streaming-focused bundle that gives you an easy way to bring your favorite shows,
+            movies, and apps together on your TV with Alexa integration.
           </p>
         </div>
         <div class="card-meta">
-          <span class="price-tag">Amazon affiliate pick</span>
-          <a class="btn-link" href="https://www.amazon.com/Amazon-Entertainment-Device-Bundle-Including/dp/B0F75SVZPB?pf_rd_p=37634106-7244-4312-8f10-3c085655bc18&amp;pf_rd_r=BSBGS34VRY5MGPDRWEAS&amp;sr=1-6-ab8d10f0-d7f9-4c4d-9c11-4a6729c86e09&amp;linkCode=ll1&amp;tag=swimmysstudio-20&amp;linkId=30b93e93f910a1e85fd87da7e2e45287&amp;language=en_US&amp;ref_=as_li_ss_tl" target="_blank" rel="noopener noreferrer">
+          <span class="price-tag">Great starter bundle for any TV</span>
+          <a class="btn-link" href="https://www.amazon.com/Amazon-Entertainment-Device-Bundle-Including/dp/B0F75SVZPB?tag=swimmysstudio-20&linkCode=ll1&linkId=30b93e93f910a1e85fd87da7e2e45287&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener noreferrer">
             View on Amazon
           </a>
         </div>
@@ -544,16 +989,16 @@
 
       <article class="card">
         <div>
-          <div class="card-tag">Smart Home Security</div>
-          <h3 class="card-title">Ring Battery Doorbell &amp; Chime</h3>
+          <div class="card-tag">Smart Home</div>
+          <h3 class="card-title">Ring Battery Doorbell + Indoor Chime</h3>
           <p class="card-text">
-            Wireless video doorbell with an indoor chime so you can see who’s at the door and
-            hear alerts from inside.
+            A battery-powered video doorbell with live notifications and an indoor chime,
+            so you can see and hear who’s at the door from your phone.
           </p>
         </div>
         <div class="card-meta">
-          <span class="price-tag">Amazon affiliate pick</span>
-          <a class="btn-link" href="https://www.amazon.com/Ring-Battery-Doorbell-Indoor-Chime/dp/B0F1C2P38G?pf_rd_p=4152d4c4-914f-464f-ae98-2c4aa3e9610c&amp;pf_rd_r=4HAEC1YZDE4JKHQPQMPP&amp;sr=1-9-18432050-6c35-4e1a-b550-6ca822004e04&amp;th=1&amp;linkCode=ll1&amp;tag=swimmysstudio-20&amp;linkId=ceb6f8f1b72bf4156a4f77a658afcdba&amp;language=en_US&amp;ref_=as_li_ss_tl" target="_blank" rel="noopener noreferrer">
+          <span class="price-tag">Simple security &amp; peace of mind</span>
+          <a class="btn-link" href="https://www.amazon.com/Ring-Battery-Doorbell-Indoor-Chime/dp/B0F1C2P38G?tag=swimmysstudio-20&linkCode=ll1&linkId=ceb6f8f1b72bf4156a4f77a658afcdba&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener noreferrer">
             View on Amazon
           </a>
         </div>
@@ -561,16 +1006,16 @@
 
       <article class="card">
         <div>
-          <div class="card-tag">Kitchen &amp; Grill Tech</div>
+          <div class="card-tag">Cooking Tech</div>
           <h3 class="card-title">MEATER Wireless Smart Thermometer</h3>
           <p class="card-text">
-            Wireless meat thermometer that lets you monitor food from your phone so you can
-            relax while things cook.
+            A fully wireless meat thermometer that tracks internal temperature and cook time
+            from an app — great for grilling, roasting, and saving your steaks.
           </p>
         </div>
         <div class="card-meta">
-          <span class="price-tag">Amazon affiliate pick</span>
-          <a class="btn-link" href="https://www.amazon.com/MEATER-Thermometer-Rotisserie-Bluetooth-Connectivity/dp/B07H8WTFHW?pf_rd_p=465153c6-77d1-45bd-adcf-5e2576f5eb3a&amp;pf_rd_r=4HAEC1YZDE4JKHQPQMPP&amp;sr=1-4-007dcc8d-3c95-49eb-aa16-e7b446f0024b&amp;th=1&amp;linkCode=ll1&amp;tag=swimmysstudio-20&amp;linkId=38f1bd24d323b596da690caf40272f90&amp;language=en_US&amp;ref_=as_li_ss_tl" target="_blank" rel="noopener noreferrer">
+          <span class="price-tag">Level-up backyard BBQs</span>
+          <a class="btn-link" href="https://www.amazon.com/MEATER-Thermometer-Rotisserie-Bluetooth-Connectivity/dp/B07H8WTFHW?tag=swimmysstudio-20&linkCode=ll1&linkId=38f1bd24d323b596da690caf40272f90&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener noreferrer">
             View on Amazon
           </a>
         </div>
@@ -578,16 +1023,16 @@
 
       <article class="card">
         <div>
-          <div class="card-tag">Desk Power &amp; Protection</div>
-          <h3 class="card-title">Surge Protector &amp; Charging Hub</h3>
+          <div class="card-tag">Power &amp; Charging</div>
+          <h3 class="card-title">Tower Power Strip &amp; USB Charging</h3>
           <p class="card-text">
-            A compact power strip with multiple outlets and charging ports so your gear plugs
-            into one protected spot.
+            A vertical surge-protected power strip with multiple outlets and USB ports — ideal
+            for powering your whole desk or entertainment center without a cable mess.
           </p>
         </div>
         <div class="card-meta">
-          <span class="price-tag">Amazon affiliate pick</span>
-          <a class="btn-link" href="https://www.amazon.com/Protector-Extension-Charging-Extender-Essentials/dp/B0BW2ZCWKQ?pd_rd_w=D0YyX&amp;content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&amp;pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&amp;pf_rd_r=GQ1DSR7FHTKTF5MRADPK&amp;pd_rd_wg=pBslm&amp;pd_rd_r=02668fb4-d991-4cb9-aae3-410f3ab02582&amp;pd_rd_i=B0FV8PD9RJ&amp;th=1&amp;linkCode=ll1&amp;tag=swimmysstudio-20&amp;linkId=abb5598b20d3165864b93fe7ed29dff5&amp;language=en_US&amp;ref_=as_li_ss_tl" target="_blank" rel="noopener noreferrer">
+          <span class="price-tag">All-in-one power solution</span>
+          <a class="btn-link" href="https://www.amazon.com/Protector-Extension-Charging-Extender-Essentials/dp/B0BW2ZCWKQ?tag=swimmysstudio-20&linkCode=ll1&linkId=abb5598b20d3165864b93fe7ed29dff5&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener noreferrer">
             View on Amazon
           </a>
         </div>
@@ -595,16 +1040,16 @@
 
       <article class="card">
         <div>
-          <div class="card-tag">Everyday Carry</div>
+          <div class="card-tag">Trackers</div>
           <h3 class="card-title">Tile Slim Bluetooth Tracker</h3>
           <p class="card-text">
-            Thin Bluetooth tracker for your wallet, bag, or sleeve to help you find your stuff
-            when it goes missing.
+            A wallet-friendly tracker that works with Tile and Life360 — perfect for slipping
+            into a bag, wallet, or laptop sleeve so you can find it from your phone.
           </p>
         </div>
         <div class="card-meta">
-          <span class="price-tag">Amazon affiliate pick</span>
-          <a class="btn-link" href="https://www.amazon.com/Tile-Life360-Slim-Bluetooth-Compatible/dp/B0DZPHCMRX?pd_rd_w=D0YyX&amp;content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&amp;pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&amp;pf_rd_r=GQ1DSR7FHTKTF5MRADPK&amp;pd_rd_wg=pBslm&amp;pd_rd_r=02668fb4-d991-4cb9-aae3-410f3ab02582&amp;pd_rd_i=B0FFB1QJ6Z&amp;th=1&amp;linkCode=ll1&amp;tag=swimmysstudio-20&amp;linkId=7f771ca69b243a24bdefac1296e15296&amp;language=en_US&amp;ref_=as_li_ss_tl" target="_blank" rel="noopener noreferrer">
+          <span class="price-tag">Thin, easy everyday backup</span>
+          <a class="btn-link" href="https://www.amazon.com/Tile-Life360-Slim-Bluetooth-Compatible/dp/B0DZPHCMRX?tag=swimmysstudio-20&linkCode=ll1&linkId=7f771ca69b243a24bdefac1296e15296&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener noreferrer">
             View on Amazon
           </a>
         </div>
@@ -612,16 +1057,16 @@
 
       <article class="card">
         <div>
-          <div class="card-tag">Gaming Monitor</div>
-          <h3 class="card-title">Sceptre 240Hz Curved Display</h3>
+          <div class="card-tag">Display</div>
+          <h3 class="card-title">Sceptre 32&quot; Curved Gaming Monitor</h3>
           <p class="card-text">
-            High-refresh curved monitor for smooth gameplay and fast response times in
-            competitive titles.
+            A 240Hz curved monitor with FreeSync support and built-in speakers — a solid
+            option if you want smoother gameplay and a more immersive desktop.
           </p>
         </div>
         <div class="card-meta">
-          <span class="price-tag">Amazon affiliate pick</span>
-          <a class="btn-link" href="https://www.amazon.com/Sceptre-FreeSync-Speakers-Displayport-C325B-FWD240/dp/B08VM9JN7H?th=1&amp;linkCode=ll1&amp;tag=swimmysstudio-20&amp;linkId=525baf8f5d5616e5a56eef9f5c94183a&amp;language=en_US&amp;ref_=as_li_ss_tl" target="_blank" rel="noopener noreferrer">
+          <span class="price-tag">High-refresh big-screen upgrade</span>
+          <a class="btn-link" href="https://www.amazon.com/Sceptre-FreeSync-Speakers-Displayport-C325B-FWD240/dp/B08VM9JN7H?tag=swimmysstudio-20&linkCode=ll1&linkId=525baf8f5d5616e5a56eef9f5c94183a&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener noreferrer">
             View on Amazon
           </a>
         </div>
@@ -629,33 +1074,105 @@
 
       <article class="card">
         <div>
-          <div class="card-tag">Creative &amp; Photos</div>
-          <h3 class="card-title">Liene Adhesive Bluetooth Photo Printer</h3>
+          <div class="card-tag">Memories</div>
+          <h3 class="card-title">Liene Portable Photo Printer</h3>
           <p class="card-text">
-            Small Bluetooth photo printer that turns phone shots into sticky-backed prints for
-            journaling and setup decoration.
+            A compact photo printer that connects to your phone via Bluetooth so you can turn
+            your favorite shots into physical prints in minutes.
           </p>
         </div>
         <div class="card-meta">
-          <span class="price-tag">Amazon affiliate pick</span>
-          <a class="btn-link" href="https://www.amazon.com/Liene-Adhesive-Bluetooth-Compatible-Smartphone/dp/B0B7457H7R?th=1&amp;linkCode=ll1&amp;tag=swimmysstudio-20&amp;linkId=03905bb523adbd0be8a5f400ac580a49&amp;language=en_US&amp;ref_=as_li_ss_tl" target="_blank" rel="noopener noreferrer">
+          <span class="price-tag">Great for travel &amp; parties</span>
+          <a class="btn-link" href="https://www.amazon.com/Liene-Adhesive-Bluetooth-Compatible-Smartphone/dp/B0B7457H7R?tag=swimmysstudio-20&linkCode=ll1&linkId=03905bb523adbd0be8a5f400ac580a49&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener noreferrer">
             View on Amazon
           </a>
         </div>
       </article>
     </div>
 
-    <p class="archive-note">
-      Any time you add a new Amazon affiliate product to your homepage, you can copy its card
-      into this archive section so visitors always have one clean place to browse everything.
-    </p>
+    <div class="archive-row">
+      <span>Dig through everything I’ve highlighted so far in one place.</span>
+      <a href="#picks-archive">View all affiliate picks →</a>
+    </div>
   </section>
 
+  <!-- CONTENT / SOCIAL -->
+  <section id="content">
+    <div class="section-label">Content</div>
+    <h2 class="section-title">Check Me Out on Other Spots!</h2>
+    <p class="section-description">
+      Most of my content lives on Instagram and Pinterest — feed posts, stories, and pins that
+      highlight new game tech, everyday gadgets, and setups that actually feel good to use.
+      Follow Swimmy's Studio to see new material and spotlights as they drop.
+    </p>
+
+    <div style="margin-top: 1.5rem;">
+      <h3 style="font-size: 1rem; margin-bottom: 0.35rem;">Highlights &amp; Setup Inspiration</h3>
+      <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem;">
+        These are the main places where I share tech finds, before-and-after setups,
+        and quick thoughts on what’s worth your time and money.
+      </p>
+      <ul class="social-list">
+        <li>
+          <span class="social-handle">Instagram:</span>
+          <a href="https://www.instagram.com/swimmys_studio/" target="_blank" rel="noopener noreferrer">
+            instagram.com/swimmys_studio
+          </a>
+        </li>
+        <li>
+          <span class="social-handle">Pinterest:</span>
+          <a href="https://pin.it/238A4Vtf1" target="_blank" rel="noopener noreferrer">
+            pinterest.com/swimmys_studio
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ANIMATED KOI BANNER (BOTTOM) -->
+  <section class="koi-banner koi-banner--bottom">
+    <p>
+      <strong>Swim with the stream:</strong> New gadgets, tweaks, and setup ideas flow through
+      here all the time. Save the site or follow on social so you don’t miss the next drop.
+    </p>
+    <div class="koi-stream">
+      <div class="koi koi-1"></div>
+      <div class="koi koi-2"></div>
+      <div class="koi koi-3"></div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER / CONTACT -->
+  <section id="contact">
+    <div class="section-label">Stay in Touch</div>
+    <h2 class="section-title">Get Tech Updates &amp; Finds</h2>
+    <p class="section-description">
+      Want an occasional heads-up when I find something surprisingly useful, a clean tech deal,
+      or post a new setup breakdown? Drop your email below.
+    </p>
+
+    <div class="newsletter">
+      <div>
+        <strong style="font-size: 0.9rem;">Studio Newsletter</strong>
+        <p>
+          This form is just a visual example. Connect it to your email provider
+          (like Mailchimp, ConvertKit, etc.) to start collecting sign-ups and keep people
+          in the loop.
+        </p>
+      </div>
+      <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Replace this alert with your real email integration.');">
+        <input type="email" placeholder="your@email.com" required />
+        <button class="btn-primary" type="submit">Notify Me</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- LEGAL / FOOTER -->
   <section class="legal">
     <small>
-      This archive includes Amazon affiliate links. If you purchase through these links,
-      I may earn a small commission at no additional cost to you. Thanks for swimming through
-      the full tech pond with Swimmy’s Studio.
+      This site includes affiliate links. If you purchase through these links (including Amazon links),
+      I may earn a small commission at no additional cost to you. Thank you for supporting Swimmy’s Studio
+      and future tech experiments.
     </small>
 
     <footer>
@@ -666,7 +1183,25 @@
 </main>
 
 <script>
+  // current year in footer
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  // smooth scroll for in-page nav
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+      const targetId = this.getAttribute("href");
+      if (targetId.length > 1) {
+        e.preventDefault();
+        const el = document.querySelector(targetId);
+        if (el) {
+          window.scrollTo({
+            top: el.offsetTop - 70,
+            behavior: "smooth",
+          });
+        }
+      }
+    });
+  });
 </script>
 </body>
 </html>
