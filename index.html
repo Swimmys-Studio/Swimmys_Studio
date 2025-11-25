@@ -500,7 +500,6 @@
 
     /* ---------- CSS KOI FISH (no images) ---------- */
 
-    /* base koi body */
     .koi {
       position: absolute;
       top: 50%;
@@ -517,7 +516,6 @@
       transform: translate(-50%, -50%) scaleX(1);
     }
 
-    /* head – on the right side in base orientation */
     .koi::before {
       content: "";
       position: absolute;
@@ -532,7 +530,6 @@
       transform: translateY(-50%);
     }
 
-    /* tail + dorsal fin – on the left side */
     .koi::after {
       content: "";
       position: absolute;
@@ -550,7 +547,6 @@
       animation: tail-flick 0.45s ease-in-out infinite;
     }
 
-    /* bounce swim */
     @keyframes swim-bounce {
       0% {
         left: -5%;
@@ -580,7 +576,6 @@
       100% { transform: translateY(-50%) rotate(6deg); }
     }
 
-    /* lanes + speeds (all using swim-bounce) */
     .koi-1,
     .koi-2,
     .koi-3 {
@@ -823,59 +818,79 @@
     <div class="section-label">Everyday Tech</div>
     <h2 class="section-title">Simple Upgrades for Daily Life</h2>
     <p class="section-description">
-      These are the kinds of products that quietly make your day better — smarter lighting,
-      cleaner cable setups, better charging, and quality-of-life tools that save time and
-      reduce stress.
+      These are the kinds of products that quietly make your day better — small gadgets and
+      helpers that shave off effort, keep things organized, and save you from annoying little
+      problems in the kitchen, car, or around the house.
     </p>
 
     <div class="grid">
+      <!-- Kitchen Gizmo Strainer -->
       <article class="card">
         <div>
-          <div class="card-tag">Smart Home</div>
-          <h3 class="card-title">Lighting &amp; Voice Control Essentials</h3>
+          <div class="card-tag">Kitchen Upgrade</div>
+          <h3 class="card-title">Kitchen Gizmo Snap N Strain Silicone Colander</h3>
           <p class="card-text">
-            Smart bulbs, plugs, and voice assistants that let you control your space with a
-            tap or a quick command. Great for winding down, waking up, or setting the mood
-            for gaming.
+            A silicone clip-on strainer that attaches directly to your pot or pan so you can
+            drain pasta, vegetables, or broth without juggling a full-sized colander. It folds
+            away small and turns almost any pot into a quick pour-and-strain setup.
           </p>
         </div>
         <div class="card-meta">
-          <span class="price-tag">Example: Starter kits under $100</span>
-          <a class="btn-link" href="https://www.amazon.com" target="_blank" rel="noopener noreferrer">
+          <span class="price-tag">Amazon everyday pick</span>
+          <a
+            class="btn-link"
+            href="https://www.amazon.com/Kitchen-Gizmo-Strainer-Silicone-Colander/dp/B01MZ14LJV?content-id=amzn1.sym.79b3b15c-b438-4704-a2b9-361704a22de6%3Aamzn1.sym.79b3b15c-b438-4704-a2b9-361704a22de6&amp;cv_ct_cx=2025%2Bmust%2Bhave%2Bgadgets&amp;hvadid=616929554302&amp;hvdev=c&amp;hvexpln=0&amp;hvlocphy=9002149&amp;hvnetw=g&amp;hvocijid=15607734188598259447--&amp;hvqmt=b&amp;hvrand=15607734188598259447&amp;hvtargid=kwd-2394600517897&amp;hydadcr=15279_13597141&amp;keywords=2025%2Bmust%2Bhave%2Bgadgets&amp;mcid=b88e40842e9d32ed84ee1db029b7cb68&amp;pd_rd_i=B01MZ14LJV&amp;pd_rd_r=f10226de-6125-404e-9bc6-4401371c6e21&amp;pd_rd_w=klAol&amp;pd_rd_wg=b8NZO&amp;pf_rd_p=79b3b15c-b438-4704-a2b9-361704a22de6&amp;pf_rd_r=YZB7H2HXWA60K04CVXBD&amp;qid=1764041519&amp;sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&amp;sr=1-1-9036c2af-0d6a-4007-a635-d50f3d0f5a3b&amp;th=1&amp;linkCode=ll1&amp;tag=swimmysstudio-20&amp;linkId=322fb56d72bfe755e520115dda91a79f&amp;language=en_US&amp;ref_=as_li_ss_tl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             View on Amazon
           </a>
         </div>
       </article>
 
+      <!-- LISEN Adjustable Portable Stand -->
       <article class="card">
         <div>
-          <div class="card-tag">Desk Setup</div>
-          <h3 class="card-title">Cable Management &amp; Charging</h3>
+          <div class="card-tag">Desk &amp; Mobile</div>
+          <h3 class="card-title">LISEN Adjustable Portable Device Stand</h3>
           <p class="card-text">
-            Stands, hubs, and charging solutions that keep your phone, controllers, and
-            laptop powered without a tangled mess of cords all over your desk.
+            A foldable, height-adjustable stand that works great for phones, tablets, and
+            smaller laptops. Use it for video calls, second-screen setups, or just to get
+            your screen to a more comfortable angle at home, at work, or on the go.
           </p>
         </div>
         <div class="card-meta">
-          <span class="price-tag">Example: Everyday picks under $60</span>
-          <a class="btn-link" href="https://www.amazon.com" target="_blank" rel="noopener noreferrer">
+          <span class="price-tag">Amazon everyday pick</span>
+          <a
+            class="btn-link"
+            href="https://www.amazon.com/LISEN-Adjustable-Portable-Generation-Accessories/dp/B0CST4CYVH?dib=eyJ2IjoiMSJ9.DzvJM-LNblzV3jPpNvsfEWu08v5onkmZJUFNtyBuLwfmOhf7i7ZAcMh40BQqXNcjdVIk5nYS4L32TXF1JSY6bert0XHDpn4-fKd5mgmSrU7qC8VrqcsS_FQo-9gj8LFw_JRBkgwZk2KeDLgynQiYhSqVWKOpl6ng3wO699FMDvtvJK9ftdtEnCdru16UgU6JxnbNAkyKWErN0mFrLNANL92NezbeedAUNamHJ4mDZw_IMceUfDX7D-hbaXkWM-TUedAZaTfiorJHWqikfrStQ0uErD9ieTAguSUEqWTG25Y.1ewkKfxzaeXA9pwdI1LTuMA5LcmHAMp6BZMVUnsa_Gw&amp;dib_tag=se&amp;hvadid=616929554302&amp;hvdev=c&amp;hvexpln=0&amp;hvlocphy=9002149&amp;hvnetw=g&amp;hvocijid=15607734188598259447--&amp;hvqmt=b&amp;hvrand=15607734188598259447&amp;hvtargid=kwd-2394600517897&amp;hydadcr=15279_13597141&amp;keywords=2025%2Bmust%2Bhave%2Bgadgets&amp;mcid=b88e40842e9d32ed84ee1db029b7cb68&amp;qid=1764041519&amp;sr=8-26&amp;th=1&amp;linkCode=ll1&amp;tag=swimmysstudio-20&amp;linkId=f33747e44abda12304d79ce626930652&amp;language=en_US&amp;ref_=as_li_ss_tl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             View on Amazon
           </a>
         </div>
       </article>
 
+      <!-- ROCGORLD Portable Inflator -->
       <article class="card">
         <div>
-          <div class="card-tag">Lifestyle Tech</div>
-          <h3 class="card-title">Health, Fitness &amp; Daily Carry</h3>
+          <div class="card-tag">Car &amp; On-the-Go</div>
+          <h3 class="card-title">ROCGORLD Portable Tire Inflator &amp; Air Compressor</h3>
           <p class="card-text">
-            Smartwatches, earbuds, and other carry-friendly tech that help you track,
-            focus, and stay entertained on the go.
+            A compact, rechargeable air compressor you can keep in the car or garage for quick
+            top-ups on tires, balls, and bike tubes. Helps you avoid low-tire warnings and
+            last-minute gas station runs when you’re trying to get somewhere on time.
           </p>
         </div>
         <div class="card-meta">
-          <span class="price-tag">Example: Mix of budget &amp; premium</span>
-          <a class="btn-link" href="https://www.amazon.com" target="_blank" rel="noopener noreferrer">
+          <span class="price-tag">Amazon everyday pick</span>
+          <a
+            class="btn-link"
+            href="https://www.amazon.com/ROCGORLD-Inflator-Portable-Compressor-Inflation/dp/B0C6GS6JR3?dib=eyJ2IjoiMSJ9._24iDNy02UfR8b-77iGOi6fS7CFm7-0rC3TAXond5MBekWRQg-fX46LqPzMcofbFG24euPxreCuKNMyiZc-YHXfklHJlEQImpjh_9Nn_Kc4.QsGv9sOTSTc-E2VpVKzF1WxeB4TpUoReM-_C5nOoqMI&amp;dib_tag=se&amp;hvadid=616929554302&amp;hvdev=c&amp;hvexpln=0&amp;hvlocphy=9002149&amp;hvnetw=g&amp;hvocijid=15607734188598259447--&amp;hvqmt=b&amp;hvrand=15607734188598259447&amp;hvtargid=kwd-2394600517897&amp;hydadcr=15279_13597141&amp;keywords=2025%2Bmust%2Bhave%2Bgadgets&amp;mcid=b88e40842e9d32ed84ee1db029b7cb68&amp;qid=1764041763&amp;sr=8-49-spons&amp;xpid=oSh83pEC6hIVj&amp;sp_csd=d2lkZ2V0TmFtZT1zcF9hdGZfbmV4dA&amp;th=1&amp;linkCode=ll1&amp;tag=swimmysstudio-20&amp;linkId=27ea90a079baae77436857e043a43eba&amp;language=en_US&amp;ref_=as_li_ss_tl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             View on Amazon
           </a>
         </div>
