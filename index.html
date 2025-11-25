@@ -498,143 +498,127 @@
       100% { transform: translateX(-15%); }
     }
 
-  /* ---------- CSS KOI FISH (no images) ---------- */
+    /* ---------- CSS KOI FISH (no images) ---------- */
 
-/* base koi body */
-.koi {
-  position: absolute;
-  top: 50%;
-  left: 0%;
-  width: 80px;
-  height: 28px;
-  /* body: white with red/orange patches */
-  background:
-    radial-gradient(circle at 25% 40%, #f97316 0 18%, transparent 22%),
-    radial-gradient(circle at 60% 60%, #fb923c 0 20%, transparent 24%),
-    radial-gradient(circle at 80% 35%, #dc2626 0 18%, transparent 22%),
-    #fefefe;
-  border-radius: 999px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
-  transform: translate(-50%, -50%) scaleX(1); /* centered, facing right */
-}
+    /* base koi body */
+    .koi {
+      position: absolute;
+      top: 50%;
+      left: 0%;
+      width: 80px;
+      height: 28px;
+      /* body: white with red/orange patches */
+      background:
+        radial-gradient(circle at 25% 40%, #f97316 0 18%, transparent 22%),
+        radial-gradient(circle at 60% 60%, #fb923c 0 20%, transparent 24%),
+        radial-gradient(circle at 80% 35%, #dc2626 0 18%, transparent 22%),
+        #fefefe;
+      border-radius: 999px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+      transform: translate(-50%, -50%) scaleX(1); /* centered, facing right */
+    }
 
-/* head */
-.koi::before {
-  content: "";
-  position: absolute;
-  right: -18px;            /* instead of left */
-  top: 50%;
-  width: 32px;
-  height: 24px;
-  border-radius: 999px;
-  background:
-    radial-gradient(circle at 70% 40%, #0f172a 0 22%, transparent 30%),   /* eye */
-    radial-gradient(circle at 45% 55%, #fee2e2 0 45%, #f97316 50% 100%);  /* head */
-  transform: translateY(-50%);
-}
+    /* head – on the right side in base orientation */
+    .koi::before {
+      content: "";
+      position: absolute;
+      right: -18px;
+      top: 50%;
+      width: 32px;
+      height: 24px;
+      border-radius: 999px;
+      background:
+        radial-gradient(circle at 70% 40%, #0f172a 0 22%, transparent 30%),   /* eye */
+        radial-gradient(circle at 45% 55%, #fee2e2 0 45%, #f97316 50% 100%);  /* head */
+      transform: translateY(-50%);
+    }
 
+    /* tail + dorsal fin – on the left side */
+    .koi::after {
+      content: "";
+      position: absolute;
+      left: -20px;
+      top: 50%;
+      width: 30px;
+      height: 24px;
+      border-radius: 999px;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(255,255,255,0.9) 0 40%, transparent 60%),
+        rgba(248, 250, 252, 0.85);
+      transform-origin: 100% 50%;
+      transform: translateY(-50%);
+      box-shadow: 4px 0 6px rgba(15, 23, 42, 0.6);
+      animation: tail-flick 0.45s ease-in-out infinite;
+    }
 
-/* tail + dorsal fin */
-.koi::after {
-  content: "";
-  position: absolute;
-  left: -20px;             /* instead of right */
-  top: 50%;
-  width: 30px;
-  height: 24px;
-  border-radius: 999px;
-  background:
-    radial-gradient(circle at 100% 0%, rgba(255,255,255,0.9) 0 40%, transparent 60%),
-    rgba(248, 250, 252, 0.85);
-  transform-origin: 100% 50%;      /* pivot at the fin side */
-  transform: translateY(-50%);
-  box-shadow: 4px 0 6px rgba(15, 23, 42, 0.6);
-  animation: tail-flick 0.45s ease-in-out infinite;
-}
+    /* bounce swim */
+    @keyframes swim-bounce {
+      0% {
+        left: -5%;
+        transform: translate(-50%, -50%) scaleX(1);   /* head right */
+      }
+      45% {
+        left: 105%;
+        transform: translate(-50%, -50%) scaleX(1);   /* still head right */
+      }
+      50% {
+        left: 105%;
+        transform: translate(-50%, -50%) scaleX(-1);  /* flip, head left */
+      }
+      95% {
+        left: -5%;
+        transform: translate(-50%, -50%) scaleX(-1);  /* head left, going back */
+      }
+      100% {
+        left: -5%;
+        transform: translate(-50%, -50%) scaleX(1);   /* reset to head right */
+      }
+    }
 
+    @keyframes tail-flick {
+      0%   { transform: translateY(-50%) rotate(6deg); }
+      50%  { transform: translateY(-50%) rotate(-8deg); }
+      100% { transform: translateY(-50%) rotate(6deg); }
+    }
 
-/* bounce swim:
-   - start left, head right
-   - go all the way to right
-   - flip and swim back left
-   - full-width travel (slightly past edges so it feels natural)
-*/
-@keyframes swim-bounce {
-  0% {
-    left: -5%;
-    transform: translate(-50%, -50%) scaleX(1);   /* head right */
-  }
-  45% {
-    left: 105%;
-    transform: translate(-50%, -50%) scaleX(1);   /* still head right */
-  }
-  50% {
-    left: 105%;
-    transform: translate(-50%, -50%) scaleX(-1);  /* flip, head left */
-  }
-  95% {
-    left: -5%;
-    transform: translate(-50%, -50%) scaleX(-1);  /* head left, going back */
-  }
-  100% {
-    left: -5%;
-    transform: translate(-50%, -50%) scaleX(1);   /* reset to head right */
-  }
-}
+    /* lanes + speeds (all using swim-bounce) */
+    .koi-1,
+    .koi-2,
+    .koi-3 {
+      animation: swim-bounce var(--swim-duration, 8s) linear infinite;
+    }
 
-@keyframes tail-flick {
-  0%   { transform: translateY(-50%) rotate(6deg); }
-  50%  { transform: translateY(-50%) rotate(-8deg); }
-  100% { transform: translateY(-50%) rotate(6deg); }
-}
+    /* top-ish lane */
+    .koi-1 {
+      top: 38%;
+      --swim-duration: 7s;
+      opacity: 0.97;
+    }
 
+    /* middle lane */
+    .koi-2 {
+      top: 58%;
+      --swim-duration: 8s;
+      opacity: 0.92;
+    }
 
-/* lanes + speeds (all using swim-bounce) */
-.koi-1,
-.koi-2,
-.koi-3 {
-  animation: swim-bounce var(--swim-duration, 8s) linear infinite;
-}
+    /* higher lane, slightly smaller */
+    .koi-3 {
+      top: 30%;
+      --swim-duration: 9s;
+      opacity: 0.88;
+      width: 70px;
+    }
 
-/* top-ish lane */
-.koi-1 {
-  top: 38%;
-  --swim-duration: 7s;
-  opacity: 0.97;
-}
+    /* staggered start times so they don't bunch up */
+    .koi-1 { animation-delay: 0s; }
+    .koi-2 { animation-delay: -2s; }
+    .koi-3 { animation-delay: -4s; }
 
-/* middle lane */
-.koi-2 {
-  top: 58%;
-  --swim-duration: 8s;
-  opacity: 0.92;
-}
-
-/* higher lane, slightly smaller */
-.koi-3 {
-  top: 30%;
-  --swim-duration: 9s;
-  opacity: 0.88;
-  width: 70px;
-}
-
-/* staggered start times so they don't bunch up */
-.koi-1 { animation-delay: 0s; }
-.koi-2 { animation-delay: -2s; }
-.koi-3 { animation-delay: -4s; }
-
-/* tail flick on the tail pseudo-element */
-.koi::after {
-  animation: tail-flick 0.45s ease-in-out infinite;
-}
-
-/* keep bottom banner slightly shorter */
-.koi-banner--bottom .koi-stream {
-  height: 56px;
-}
-
-
-
+    /* keep bottom banner slightly shorter */
+    .koi-banner--bottom .koi-stream {
+      height: 56px;
+    }
 
     /* Social / content */
     .social-list {
@@ -974,68 +958,184 @@
     <div class="section-label">Curated Affiliate Picks</div>
     <h2 class="section-title">Handpicked Tech Worth Checking Out</h2>
     <p class="section-description">
-      This is where I highlight specific products that stand out — either because I use them
-      personally, they’re highly rated, or they solve a problem in a clean way. Most of these
-      links will go through Amazon.
+      These are real products that caught my eye — smart home upgrades, everyday tech helpers,
+      and gaming gear that can level up your setup or day-to-day life. All links below use my
+      Amazon affiliate tag.
     </p>
 
     <div class="grid">
+      <!-- 1. Amazon Entertainment Device Bundle -->
       <article class="card">
         <div>
-          <div class="card-tag">Work &amp; Study</div>
-          <h3 class="card-title">Focus-Boosting Desk Setup Bundle</h3>
+          <div class="card-tag">Streaming &amp; Smart Home</div>
+          <h3 class="card-title">Amazon Entertainment Device Bundle</h3>
           <p class="card-text">
-            A combo of monitor stand, desk mat, and USB hub to organize your workspace and
-            keep the essentials within reach.
+            A compact bundle that pulls your streaming, music, and smart-home control into one
+            simple setup. Great for turning a regular TV into a central hub for movies, shows,
+            and background music while you game or work.
           </p>
         </div>
         <div class="card-meta">
-          <span class="price-tag">Example: Bundle-style picks</span>
-          <a class="btn-link" href="https://www.amazon.com" target="_blank" rel="noopener noreferrer">
-            Amazon Affiliate Link
+          <span class="price-tag">Amazon affiliate pick</span>
+          <a
+            class="btn-link"
+            href="https://www.amazon.com/Amazon-Entertainment-Device-Bundle-Including/dp/B0F75SVZPB?pf_rd_p=37634106-7244-4312-8f10-3c085655bc18&amp;pf_rd_r=BSBGS34VRY5MGPDRWEAS&amp;sr=1-6-ab8d10f0-d7f9-4c4d-9c11-4a6729c86e09&amp;linkCode=ll1&amp;tag=swimmysstudio-20&amp;linkId=30b93e93f910a1e85fd87da7e2e45287&amp;language=en_US&amp;ref_=as_li_ss_tl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View on Amazon
           </a>
         </div>
       </article>
 
+      <!-- 2. Ring Battery Doorbell + Chime -->
       <article class="card">
         <div>
-          <div class="card-tag">On-the-Go</div>
-          <h3 class="card-title">Portable Charging &amp; Storage</h3>
+          <div class="card-tag">Smart Home Security</div>
+          <h3 class="card-title">Ring Battery Doorbell &amp; Chime</h3>
           <p class="card-text">
-            Power banks, compact chargers, and storage devices that keep your tech alive and
-            your files backed up while you move.
+            A wireless video doorbell with an indoor chime so you can see who’s at the door
+            and hear alerts from inside. Helpful for deliveries, visitors, and keeping an eye
+            on your porch without rewiring your whole house.
           </p>
         </div>
         <div class="card-meta">
-          <span class="price-tag">Example: Travel-friendly gear</span>
-          <a class="btn-link" href="https://www.amazon.com" target="_blank" rel="noopener noreferrer">
-            Amazon Affiliate Link
+          <span class="price-tag">Amazon affiliate pick</span>
+          <a
+            class="btn-link"
+            href="https://www.amazon.com/Ring-Battery-Doorbell-Indoor-Chime/dp/B0F1C2P38G?pf_rd_p=4152d4c4-914f-464f-ae98-2c4aa3e9610c&amp;pf_rd_r=4HAEC1YZDE4JKHQPQMPP&amp;sr=1-9-18432050-6c35-4e1a-b550-6ca822004e04&amp;th=1&amp;linkCode=ll1&amp;tag=swimmysstudio-20&amp;linkId=ceb6f8f1b72bf4156a4f77a658afcdba&amp;language=en_US&amp;ref_=as_li_ss_tl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View on Amazon
           </a>
         </div>
       </article>
 
+      <!-- 3. MEATER Wireless Thermometer -->
       <article class="card">
         <div>
-          <div class="card-tag">Streaming &amp; Content</div>
-          <h3 class="card-title">Starter Creator Kit</h3>
+          <div class="card-tag">Kitchen &amp; Grill Tech</div>
+          <h3 class="card-title">MEATER Wireless Smart Thermometer</h3>
           <p class="card-text">
-            Mic, arm, and basic lighting picks to make your voice clearer and your space
-            look better on camera — perfect for reels, short-form videos, or streams.
+            A truly wireless meat thermometer you leave in while cooking. Track temps from your
+            phone over Bluetooth so you can hang out, game, or prep sides without hovering over
+            the grill or oven.
           </p>
         </div>
         <div class="card-meta">
-          <span class="price-tag">Example: Starter-level setup</span>
-          <a class="btn-link" href="https://www.amazon.com" target="_blank" rel="noopener noreferrer">
-            Amazon Affiliate Link
+          <span class="price-tag">Amazon affiliate pick</span>
+          <a
+            class="btn-link"
+            href="https://www.amazon.com/MEATER-Thermometer-Rotisserie-Bluetooth-Connectivity/dp/B07H8WTFHW?pf_rd_p=465153c6-77d1-45bd-adcf-5e2576f5eb3a&amp;pf_rd_r=4HAEC1YZDE4JKHQPQMPP&amp;sr=1-4-007dcc8d-3c95-49eb-aa16-e7b446f0024b&amp;th=1&amp;linkCode=ll1&amp;tag=swimmysstudio-20&amp;linkId=38f1bd24d323b596da690caf40272f90&amp;language=en_US&amp;ref_=as_li_ss_tl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View on Amazon
+          </a>
+        </div>
+      </article>
+
+      <!-- 4. Surge Protector / Power Strip -->
+      <article class="card">
+        <div>
+          <div class="card-tag">Desk Power &amp; Protection</div>
+          <h3 class="card-title">Surge Protector &amp; Charging Hub</h3>
+          <p class="card-text">
+            A compact power strip with multiple outlets and charging ports so your monitor,
+            PC, console, and chargers all plug into one protected spot. Great for cleaning up
+            cable chaos under the desk.
+          </p>
+        </div>
+        <div class="card-meta">
+          <span class="price-tag">Amazon affiliate pick</span>
+          <a
+            class="btn-link"
+            href="https://www.amazon.com/Protector-Extension-Charging-Extender-Essentials/dp/B0BW2ZCWKQ?pd_rd_w=D0YyX&amp;content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&amp;pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&amp;pf_rd_r=GQ1DSR7FHTKTF5MRADPK&amp;pd_rd_wg=pBslm&amp;pd_rd_r=02668fb4-d991-4cb9-aae3-410f3ab02582&amp;pd_rd_i=B0FV8PD9RJ&amp;th=1&amp;linkCode=ll1&amp;tag=swimmysstudio-20&amp;linkId=abb5598b20d3165864b93fe7ed29dff5&amp;language=en_US&amp;ref_=as_li_ss_tl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View on Amazon
+          </a>
+        </div>
+      </article>
+
+      <!-- 5. Tile Slim Tracker -->
+      <article class="card">
+        <div>
+          <div class="card-tag">Everyday Carry</div>
+          <h3 class="card-title">Tile Slim Bluetooth Tracker</h3>
+          <p class="card-text">
+            A thin Bluetooth tracker that slides into a wallet, bag, or laptop sleeve. If you
+            misplace your stuff, you can ring it from your phone or see its last known location
+            in the app.
+          </p>
+        </div>
+        <div class="card-meta">
+          <span class="price-tag">Amazon affiliate pick</span>
+          <a
+            class="btn-link"
+            href="https://www.amazon.com/Tile-Life360-Slim-Bluetooth-Compatible/dp/B0DZPHCMRX?pd_rd_w=D0YyX&amp;content-id=amzn1.sym.fef9af56-6177-46e9-8710-a5293a68dd39&amp;pf_rd_p=fef9af56-6177-46e9-8710-a5293a68dd39&amp;pf_rd_r=GQ1DSR7FHTKTF5MRADPK&amp;pd_rd_wg=pBslm&amp;pd_rd_r=02668fb4-d991-4cb9-aae3-410f3ab02582&amp;pd_rd_i=B0FFB1QJ6Z&amp;th=1&amp;linkCode=ll1&amp;tag=swimmysstudio-20&amp;linkId=7f771ca69b243a24bdefac1296e15296&amp;language=en_US&amp;ref_=as_li_ss_tl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View on Amazon
+          </a>
+        </div>
+      </article>
+
+      <!-- 6. Sceptre 240Hz Gaming Monitor -->
+      <article class="card">
+        <div>
+          <div class="card-tag">Gaming Monitor</div>
+          <h3 class="card-title">Sceptre 240Hz Curved Display</h3>
+          <p class="card-text">
+            A high-refresh curved monitor designed for smooth gameplay and fast response times.
+            Ideal for competitive titles where every frame counts and you want that extra edge.
+          </p>
+        </div>
+        <div class="card-meta">
+          <span class="price-tag">Amazon affiliate pick</span>
+          <a
+            class="btn-link"
+            href="https://www.amazon.com/Sceptre-FreeSync-Speakers-Displayport-C325B-FWD240/dp/B08VM9JN7H?th=1&amp;linkCode=ll1&amp;tag=swimmysstudio-20&amp;linkId=525baf8f5d5616e5a56eef9f5c94183a&amp;language=en_US&amp;ref_=as_li_ss_tl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View on Amazon
+          </a>
+        </div>
+      </article>
+
+      <!-- 7. Liene Adhesive Photo Printer -->
+      <article class="card">
+        <div>
+          <div class="card-tag">Creative &amp; Photos</div>
+          <h3 class="card-title">Liene Adhesive Bluetooth Photo Printer</h3>
+          <p class="card-text">
+            A small Bluetooth photo printer that lets you turn phone shots into sticky-backed
+            prints. Fun for journaling, decorating your setup, or adding snapshots to your
+            PC case or console.
+          </p>
+        </div>
+        <div class="card-meta">
+          <span class="price-tag">Amazon affiliate pick</span>
+          <a
+            class="btn-link"
+            href="https://www.amazon.com/Liene-Adhesive-Bluetooth-Compatible-Smartphone/dp/B0B7457H7R?th=1&amp;linkCode=ll1&amp;tag=swimmysstudio-20&amp;linkId=03905bb523adbd0be8a5f400ac580a49&amp;language=en_US&amp;ref_=as_li_ss_tl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View on Amazon
           </a>
         </div>
       </article>
     </div>
 
     <div class="picks-note">
-      <strong>How to use this section:</strong> Replace the example Amazon URLs with your actual
-      affiliate links. You can swap titles, descriptions, and price notes to match the exact
-      products you decide to feature.
+      <strong>Note:</strong> All of the links in this section are Amazon affiliate links that use
+      my <code>swimmysstudio-20</code> tag. If you decide to pick something up through these links,
+      it helps support Swimmy's Studio at no extra cost to you.
     </div>
   </section>
 
