@@ -2,117 +2,326 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Swimmy's Studio | Product Archive</title>
+  <title>Swimmy's Studio | Tech Archive</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <style>
+    :root {
+      --bg: #050816;
+      --bg-alt: #0b1020;
+      --accent: #ff6b35;
+      --accent-soft: rgba(255, 107, 53, 0.15);
+      --text: #f5f5f7;
+      --muted: #9ca3af;
+      --card: #111827;
+      --border: #1f2933;
+      --radius-lg: 20px;
+      --radius-xl: 26px;
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    }
+
     body {
       background: radial-gradient(circle at top, #111827 0, #020617 45%, #000 100%);
-      font-family: system-ui, sans-serif;
-      margin: 0;
-      padding: 2rem;
-      color: #f5f5f7;
+      color: var(--text);
+      line-height: 1.6;
     }
-    h1 {
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 1.5rem;
+
+    img {
+      max-width: 100%;
+      display: block;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Header / nav (matches main site) */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(
+        to bottom,
+        rgba(2, 6, 23, 0.95),
+        rgba(2, 6, 23, 0.8),
+        transparent
+      );
+      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+    }
+
+    .nav {
       max-width: 1100px;
       margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
     }
-    .card {
-      background: #111827;
-      border: 1px solid #1f2937;
-      padding: 1rem;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
     }
-    .card-media img {
+
+    .logo-circle {
+      width: 48px;
+      height: 48px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #ffe3c8, #ff6b35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+    }
+
+    .logo-circle img {
       width: 100%;
-      border-radius: 12px;
-      margin-bottom: 0.75rem;
+      height: 100%;
+      object-fit: cover;
     }
-    .card-tag {
+
+    .brand-title {
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      font-size: 1.05rem;
+    }
+
+    .brand-sub {
       font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      padding: 0.25rem 0.5rem;
+      border-radius: 999px;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+      background: rgba(148, 163, 184, 0.18);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3.5rem;
+    }
+
+    /* Page intro */
+    .section-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .section-description {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 42rem;
+      margin-bottom: 1.75rem;
+    }
+
+    /* Cards / grids (same as index) */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      padding: 1.1rem 1rem 1rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-tag {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
       color: #9ca3af;
       margin-bottom: 0.35rem;
     }
+
     .card-title {
-      font-size: 1.05rem;
-      font-weight: bold;
-      margin-bottom: 0.35rem;
+      font-size: 0.98rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
     }
+
     .card-text {
-      font-size: 0.85rem;
-      color: #ccc;
+      font-size: 0.82rem;
+      color: var(--muted);
       margin-bottom: 0.75rem;
     }
+
     .card-meta {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      font-size: 0.75rem;
+      color: #9ca3af;
     }
+
     .price-tag {
-      font-size: 0.8rem;
+      font-weight: 600;
       color: #facc15;
-      font-weight: bold;
     }
+
     .btn-link {
       font-size: 0.75rem;
-      color: #ff6b35;
       text-transform: uppercase;
-      text-decoration: none;
-      font-weight: bold;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      padding: 0.15rem 0;
     }
-    a.back-link {
-      display: inline-block;
-      margin-bottom: 1.5rem;
-      color: #93c5fd;
-      text-decoration: none;
-      font-size: 0.9rem;
+
+    /* Product image block inside cards */
+    .card-media {
+      width: 100%;
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 0.7rem;
+      border: 1px solid rgba(15, 23, 42, 0.8);
+      background: radial-gradient(circle at top, #1f2937, #020617);
+      height: 220px; /* keeps all cards same height */
+    }
+
+    .card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+      }
+      main {
+        padding-inline: 1rem;
+      }
+      .grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
     }
   </style>
 </head>
 <body>
-
-<a class="back-link" href="index.html">← Back to Main Site</a>
-
-<h1>Swimmy's Studio Archive</h1>
-
-<div class="grid">
-
-  <!-- ARCHIVED: Kids Tablet -->
-  <article class="card">
-    <div class="card-media">
-      <img
-        src="https://m.media-amazon.com/images/I/71MLYEif3nL._AC_SL1500_.jpg"
-        alt="Kids Amazon Tablet"
-      />
+<header>
+  <nav class="nav">
+    <div class="nav-left">
+      <div class="logo-circle">
+        <img src="Swimmys_Studio.png" alt="Swimmy's Studio logo" />
+      </div>
+      <div>
+        <div class="brand-title">Swimmy's Studio</div>
+        <div class="brand-sub">@swimmys_studio</div>
+      </div>
     </div>
 
-    <div>
-      <div class="card-tag">Archived • Kids Tech</div>
-      <h3 class="card-title">Kids Amazon Tablet</h3>
-      <p class="card-text">
-        A kid-friendly tablet with parental controls, learning apps, and a tough case.
-        Great for safe learning and entertainment.
-      </p>
+    <!-- On archive page, these links go back to sections on index.html -->
+    <div class="nav-links">
+      <a href="index.html#everyday">Daily Tech</a>
+      <a href="index.html#gaming">Gaming Gear</a>
+      <a href="index.html#picks">Affiliate Picks</a>
+      <a href="index.html#content">Content</a>
+      <a href="index.html#contact">Stay in Touch</a>
+      <a href="archive.html">Archive</a>
     </div>
+  </nav>
+</header>
 
-    <div class="card-meta">
-      <span class="price-tag">Previously Featured</span>
-      <a class="btn-link" href="https://www.amazon.com/dp/B09WQ41ZQ8?tag=swimmysstudio-20" target="_blank">
-        View on Amazon
-      </a>
-    </div>
-  </article>
+<main>
+  <div class="section-label">Archived Picks</div>
+  <h1 class="section-title">Past Tech & Gadget Highlights</h1>
+  <p class="section-description">
+    This archive collects products that were previously featured on Swimmy's Studio.
+    They might have been rotated out to make room for new finds, but they’re still worth
+    checking out. Browse around, revisit older picks, and discover gear you may have missed.
+  </p>
 
-</div>
+  <div class="grid">
+    <!-- ARCHIVED: Kids Amazon Tablet -->
+    <article class="card">
+      <div class="card-media">
+        <img
+          src="https://m.media-amazon.com/images/I/71MLYEif3nL._AC_SL1500_.jpg"
+          alt="Kids Amazon Tablet with protective case"
+          loading="lazy"
+        />
+      </div>
+
+      <div>
+        <div class="card-tag">Archived • Kids Tech</div>
+        <h3 class="card-title">Kids Amazon Tablet</h3>
+        <p class="card-text">
+          A kid-friendly tablet with parental controls, learning apps, and a tough case.
+          Great for safe screen time, reading, and games when you want something durable.
+        </p>
+      </div>
+
+      <div class="card-meta">
+        <span class="price-tag">Previously featured pick</span>
+        <a
+          class="btn-link"
+          href="https://www.amazon.com/dp/B09WQ41ZQ8?tag=swimmysstudio-20"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View on Amazon
+        </a>
+      </div>
+    </article>
+
+    <!-- When you retire more products from index.html, copy their cards here
+         and maybe add "Archived" to the tag, like above. -->
+  </div>
+</main>
 
 </body>
 </html>
