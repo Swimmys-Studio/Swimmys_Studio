@@ -128,7 +128,7 @@
       padding: 2.5rem 1.25rem 3.5rem;
     }
 
-    /* Page intro */
+    /* Section headings */
     .section-label {
       font-size: 0.78rem;
       letter-spacing: 0.18em;
@@ -138,7 +138,7 @@
     }
 
     .section-title {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       font-weight: 700;
       margin-bottom: 0.6rem;
     }
@@ -150,7 +150,11 @@
       margin-bottom: 1.75rem;
     }
 
-    /* Cards / grids (same as index) */
+    section {
+      margin-bottom: 2.75rem;
+    }
+
+    /* Cards / grids (same style as main site) */
     .grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -221,7 +225,7 @@
       margin-bottom: 0.7rem;
       border: 1px solid rgba(15, 23, 42, 0.8);
       background: radial-gradient(circle at top, #1f2937, #020617);
-      height: 220px; /* keeps all cards same height */
+      height: 220px;               /* keeps all images same height */
     }
 
     .card-media img {
@@ -264,7 +268,7 @@
       </div>
     </div>
 
-    <!-- On archive page, these links go back to sections on index.html -->
+    <!-- On archive page, links go back to main index sections -->
     <div class="nav-links">
       <a href="index.html#everyday">Daily Tech</a>
       <a href="index.html#gaming">Gaming Gear</a>
@@ -277,50 +281,103 @@
 </header>
 
 <main>
-  <div class="section-label">Archived Picks</div>
-  <h1 class="section-title">Past Tech & Gadget Highlights</h1>
-  <p class="section-description">
-    This archive collects products that were previously featured on Swimmy's Studio.
-    They might have been rotated out to make room for new finds, but they’re still worth
-    checking out. Browse around, revisit older picks, and discover gear you may have missed.
-  </p>
+  <!-- PAGE INTRO -->
+  <section>
+    <div class="section-label">Archive</div>
+    <h1 class="section-title">Past Tech & Gadget Highlights</h1>
+    <p class="section-description">
+      Everything on this page has been featured on Swimmy's Studio before and has since
+      rotated out to make room for new finds. Use the sections below to explore older
+      Everyday Tech, Gaming &amp; Entertainment picks, and retired Affiliate Picks.
+    </p>
+  </section>
 
-  <div class="grid">
-    <!-- ARCHIVED: Kids Amazon Tablet -->
-    <article class="card">
-      <div class="card-media">
-        <img
-          src="https://m.media-amazon.com/images/I/71MLYEif3nL._AC_SL1500_.jpg"
-          alt="Kids Amazon Tablet with protective case"
-          loading="lazy"
-        />
-      </div>
+  <!-- EVERYDAY TECH ARCHIVE -->
+  <section id="everyday-archive">
+    <div class="section-label">Everyday Tech Archive</div>
+    <h2 class="section-title">Retired Everyday Tech Picks</h2>
+    <p class="section-description">
+      These are gadgets and quality-of-life upgrades that were previously featured in
+      the Everyday Tech section. They still hold up, even if they’re not on the front page
+      anymore.
+    </p>
 
-      <div>
-        <div class="card-tag">Archived • Kids Tech</div>
-        <h3 class="card-title">Kids Amazon Tablet</h3>
-        <p class="card-text">
-          A kid-friendly tablet with parental controls, learning apps, and a tough case.
-          Great for safe screen time, reading, and games when you want something durable.
-        </p>
-      </div>
+    <div class="grid">
+      <!-- ARCHIVED: Kids Amazon Tablet (fits as everyday / kids tech) -->
+      <article class="card">
+        <div class="card-media">
+          <img
+            src="https://m.media-amazon.com/images/I/71MLYEif3nL._AC_SL1500_.jpg"
+            alt="Kids Amazon Tablet with protective case"
+            loading="lazy"
+          />
+        </div>
 
-      <div class="card-meta">
-        <span class="price-tag">Previously featured pick</span>
-        <a
-          class="btn-link"
-          href="https://www.amazon.com/dp/B09WQ41ZQ8?tag=swimmysstudio-20"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View on Amazon
-        </a>
-      </div>
-    </article>
+        <div>
+          <div class="card-tag">Archived • Kids Tech</div>
+          <h3 class="card-title">Kids Amazon Tablet</h3>
+          <p class="card-text">
+            A kid-friendly tablet with parental controls, learning apps, and a tough case.
+            Great for safe screen time, reading, and games when you want something durable.
+          </p>
+        </div>
 
-    <!-- When you retire more products from index.html, copy their cards here
-         and maybe add "Archived" to the tag, like above. -->
-  </div>
+        <div class="card-meta">
+          <span class="price-tag">Previously featured everyday pick</span>
+          <a
+            class="btn-link"
+            href="https://www.amazon.com/dp/B09WQ41ZQ8?tag=swimmysstudio-20"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View on Amazon
+          </a>
+        </div>
+      </article>
+
+      <!-- When you retire more Everyday Tech cards, copy them here -->
+    </div>
+  </section>
+
+  <!-- GAMING & ENTERTAINMENT ARCHIVE -->
+  <section id="gaming-archive">
+    <div class="section-label">Gaming &amp; Entertainment Archive</div>
+    <h2 class="section-title">Retired Gaming &amp; Entertainment Picks</h2>
+    <p class="section-description">
+      Older gaming, streaming, and entertainment gear that has appeared on the Gaming
+      section before. Use this as a back catalog for setups, accessories, and display ideas.
+    </p>
+
+    <div class="grid">
+      <!-- Example placeholder: when you rotate out a gaming card from index.html,
+           paste its <article class="card"> block here. -->
+      <!--
+      <article class="card">
+        ...old gaming card here...
+      </article>
+      -->
+    </div>
+  </section>
+
+  <!-- AFFILIATE PICKS ARCHIVE -->
+  <section id="picks-archive">
+    <div class="section-label">Affiliate Picks Archive</div>
+    <h2 class="section-title">Retired Curated Affiliate Picks</h2>
+    <p class="section-description">
+      Past products from the Curated Affiliate Picks section. These items were once in
+      the spotlight and may still be great fits depending on your setup and needs.
+    </p>
+
+    <div class="grid">
+      <!-- Example placeholder: when you replace an Affiliate Pick on the main page,
+           move its <article class="card"> here. -->
+      <!--
+      <article class="card">
+        ...old affiliate pick card here...
+      </article>
+      -->
+    </div>
+  </section>
 </main>
 
 </body>
