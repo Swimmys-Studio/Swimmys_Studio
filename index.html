@@ -471,6 +471,38 @@
       color: var(--accent);
     }
 
+    /* AFFILIATE PICKS — force grid layout so cards aren't huge */
+.picks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+/* Ensure Affiliate Picks images match other card sizes */
+#picks .card-media {
+  height: 180px; /* same as smaller sections */
+}
+
+#picks .card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsive for Affiliate Picks */
+@media (max-width: 900px) {
+  .picks-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .picks-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
     /* KOI BANNERS — water + CSS koi fish */
     .koi-banner {
       margin-top: 2.5rem;
@@ -1161,9 +1193,8 @@
       links go through Amazon.
     </p>
 
-<!-- wrap ALL affiliate cards in a grid -->
-<div class="grid">
-    
+<div class="picks-grid">
+
     <!-- KISMILE 5-IN-1 GLASS AIR FRYER -->
 <article class="card">
   <div class="card-media">
