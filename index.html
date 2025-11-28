@@ -438,16 +438,16 @@
   margin-bottom: 0.7rem;
   border: 1px solid rgba(15, 23, 42, 0.8);
   background: radial-gradient(circle at top, #1f2937, #020617);
-  height: 220px;      /* ← FIX: locks all cards to same photo height */
+  height: 220px;              /* << keeps all card images same height */
 }
 
-/* Forces Amazon images to fit perfectly inside the box */
 .card-media img {
   width: 100%;
-  height: 100%;        /* ← now fills the box */
-  object-fit: cover;   /* ← crops nicely instead of stretching */
+  height: 100%;               /* << fill the box */
+  object-fit: cover;          /* << crop nicely, no weird stretch */
   display: block;
 }
+
 
     /* archive rows */
     .archive-row {
@@ -885,7 +885,7 @@
       <article class="card">
         <div class="card-media">
           <img
-            src="https://m.media-amazon.com/images/I/41TAa5hzY+L._AC_.jpg"
+            src="https://m.media-amazon.com/images/I/718d7IFXzBL._AC_SL1500_.jpg"
             alt="Adjustable portable laptop and tablet stand"
             loading="lazy"
           />
@@ -1050,7 +1050,7 @@
 <article class="card">
   <div class="card-media">
     <img
-      src="https://m.media-amazon.com/images/I/71YwlA+J51L._AC_SL1500_.jpg"
+      src="https://m.media-amazon.com/images/I/81zd0VEDAgL._AC_SL1500_.jpg"
       alt="Kismile upgraded 5-in-1 glass air fryer with dual glass bowls"
       loading="lazy"
     />
@@ -1059,10 +1059,9 @@
   <div>
     <div class="card-tag">Kitchen Tech</div>
     <h3 class="card-title">Kismile 5-in-1 Glass Air Fryer</h3>
-
     <p class="card-text">
-      A fully updated dual-glass-bowl air fryer that lets you roast, bake, crisp, 
-      warm, and air fry with full visibility through dishwasher-safe glass bowls.
+      A fully updated dual-glass-bowl air fryer that lets you roast, bake, crisp, warm,
+      and air fry with full visibility through dishwasher-safe glass bowls.
     </p>
   </div>
 
@@ -1074,10 +1073,11 @@
       target="_blank"
       rel="noopener noreferrer"
     >
-          View on Amazon
-        </a>
-      </div>
-    </article>
+      View on Amazon
+    </a>
+  </div>
+</article>
+
 
 
       <!-- RING DOORBELL -->
@@ -1238,9 +1238,9 @@
     </div>
 
     <div class="archive-row">
-      <span>Dig through everything I’ve highlighted so far in one place.</span>
-      <a href="#picks-archive">View all affiliate picks →</a>
-    </div>
+  <span>Dig through everything I’ve highlighted so far in one place.</span>
+  <a href="archive.html">View all affiliate picks →</a>
+  </div>
   </section>
 
   <!-- CONTENT / SOCIAL -->
