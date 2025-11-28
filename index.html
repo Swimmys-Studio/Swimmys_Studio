@@ -368,86 +368,85 @@
     }
 
     /* Cards / grids */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.25rem;
-  margin-top: 1.5rem;
-}
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
 
-.card {
-  background: var(--card);
-  border-radius: var(--radius-lg);
-  padding: 1.1rem 1rem 1rem;
-  border: 1px solid var(--border);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+    .card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      padding: 1.1rem 1rem 1rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
-.card-tag {
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: #9ca3af;
-  margin-bottom: 0.35rem;
-}
+    .card-tag {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #9ca3af;
+      margin-bottom: 0.35rem;
+    }
 
-.card-title {
-  font-size: 0.98rem;
-  font-weight: 600;
-  margin-bottom: 0.25rem;
-}
+    .card-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
 
-.card-text {
-  font-size: 0.82rem;
-  color: var(--muted);
-  margin-bottom: 0.75rem;
-}
+    .card-text {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
 
-.card-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.75rem;
-  color: #9ca3af;
-}
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: #9ca3af;
+    }
 
-.price-tag {
-  font-weight: 600;
-  color: #facc15;
-}
+    .price-tag {
+      font-weight: 600;
+      color: #facc15;
+    }
 
-.btn-link {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  color: var(--accent);
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  padding: 0.15rem 0;
-}
+    .btn-link {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      padding: 0.15rem 0;
+    }
 
-/* Product image block inside cards */
-.card-media {
-  width: 100%;
-  border-radius: 14px;
-  overflow: hidden;
-  margin-bottom: 0.7rem;
-  border: 1px solid rgba(15, 23, 42, 0.8);
-  background: radial-gradient(circle at top, #1f2937, #020617);
-  height: 220px;               /* <<< THIS LOCKS THE CARD HEIGHT */
-}
+    /* Product image block inside cards */
+    .card-media {
+      width: 100%;
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 0.7rem;
+      border: 1px solid rgba(15, 23, 42, 0.8);
+      background: radial-gradient(circle at top, #1f2937, #020617);
+      height: 220px;
+    }
 
-.card-media img {
-  width: 100%;
-  height: 100%;                 /* fill the box */
-  max-height: 220px;            /* extra safety */
-  object-fit: cover;            /* crop nicely */
-  display: block;
-}
+    .card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
     /* archive rows */
     .archive-row {
@@ -473,7 +472,6 @@
     }
 
     /* KOI BANNERS — water + CSS koi fish */
-
     .koi-banner {
       margin-top: 2.5rem;
       margin-bottom: 1.5rem;
@@ -528,7 +526,6 @@
     }
 
     /* CSS KOI FISH */
-
     .koi {
       position: absolute;
       top: 50%;
@@ -653,7 +650,7 @@
       color: #e5e7eb;
     }
 
-    /* Newsletter */
+    /* “Newsletter” container (reused for social follow) */
     .newsletter {
       margin-top: 1.5rem;
       padding: 1rem 1rem;
@@ -675,42 +672,154 @@
       gap: 0.6rem;
     }
 
-    .newsletter input[type="email"] {
-      flex: 1 1 180px;
-      padding: 0.6rem 0.75rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      background: #020617;
-      color: var(--text);
-      font-size: 0.85rem;
-    }
-
-    .newsletter input[type="email"]::placeholder {
-      color: #6b7280;
-    }
-
-    /* Legal / Footer */
-    .legal {
+    /* PREMIUM ANIMATED FOOTER */
+    .site-footer {
       margin-top: 3rem;
-      font-size: 0.75rem;
-      color: var(--muted);
       border-top: 1px solid rgba(31, 41, 55, 0.9);
-      padding-top: 1.5rem;
+      background: radial-gradient(circle at top, #020617 0, #020617 40%, #000 100%);
+      box-shadow: 0 -18px 40px rgba(0, 0, 0, 0.7);
+      position: relative;
+      overflow: hidden;
     }
 
-    .legal small {
-      display: block;
-      margin-bottom: 0.25rem;
+    .site-footer::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.16) 0 22%, transparent 45%),
+        radial-gradient(circle at 80% 70%, rgba(56, 189, 248, 0.18) 0 25%, transparent 55%);
+      opacity: 0.2;
+      mix-blend-mode: screen;
+      animation: footer-glow 18s ease-in-out infinite alternate;
+      pointer-events: none;
     }
 
-    footer {
-      margin-top: 0.75rem;
-      font-size: 0.75rem;
-      color: #6b7280;
+    @keyframes footer-glow {
+      0%   { transform: translateX(-6%) translateY(0); }
+      50%  { transform: translateX(4%) translateY(-4%); }
+      100% { transform: translateX(10%) translateY(2%); }
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 1.75rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-top {
       display: flex;
       flex-wrap: wrap;
+      gap: 2rem;
       justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-disclosure h3 {
+      font-size: 0.9rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #9ca3af;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-disclosure p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      max-width: 32rem;
+    }
+
+    .footer-social {
+      min-width: 220px;
+    }
+
+    .footer-social-label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #e5e7eb;
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+    .footer-social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .footer-social-links a {
+      font-size: 0.8rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      text-decoration: none;
+      transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease,
+                  border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .footer-social-links a img {
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      filter: brightness(0.9) contrast(1.1);
+      transition: filter 0.25s ease;
+    }
+
+    .footer-social-links a:hover {
+      background: linear-gradient(135deg, #ff6b35, #ffa62b);
+      border-color: transparent;
+      color: #111827;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.6);
+    }
+
+    .footer-social-links a:hover img {
+      filter: none;
+    }
+
+    .footer-koi-wrap {
+      margin: 0.25rem 0 0.85rem;
+    }
+
+    .footer-koi-stream {
+      width: 100%;
+      height: 52px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: inset 0 0 18px rgba(15, 23, 42, 0.95);
+      background:
+        radial-gradient(circle at 15% 20%, rgba(56, 189, 248, 0.35) 0 22%, transparent 25%),
+        radial-gradient(circle at 70% 80%, rgba(45, 212, 191, 0.35) 0 22%, transparent 25%),
+        linear-gradient(135deg, #020617, #06263a 35%, #022c3b 55%, #020617 80%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer-koi-stream .koi {
+      opacity: 0.95;
+    }
+
+    .footer-koi-stream .koi-1,
+    .footer-koi-stream .koi-2,
+    .footer-koi-stream .koi-3 {
+      --swim-duration: 6.5s;
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
       gap: 0.5rem;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--muted);
     }
 
     /* Responsive */
@@ -748,6 +857,12 @@
       .koi {
         width: 60px;
         height: 22px;
+      }
+      .footer-top {
+        flex-direction: column;
+      }
+      .footer-koi-stream {
+        height: 46px;
       }
     }
   </style>
@@ -1050,7 +1165,7 @@
 <article class="card">
   <div class="card-media">
     <img
-      src="https://m.media-amazon.com/images/I/71YwlA+J51L._AC_SL1500_.jpg"
+      src="https://m.media-amazon.com/images/I/71MLYEif3nL._AC_SL1500_.jpg"
       alt="Kismile upgraded 5-in-1 glass air fryer with dual glass bowls"
       loading="lazy"
     />
@@ -1064,45 +1179,39 @@
       and air fry with full visibility through dishwasher-safe glass bowls.
     </p>
   </div>
-
   <div class="card-meta">
     <span class="price-tag">Multi-function kitchen upgrade</span>
-    <a
-      class="btn-link"
-      href="https://amzn.to/43V9Ytv"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <a class="btn-link" href="https://amzn.to/43V9Ytv" target="_blank" rel="noopener noreferrer">
       View on Amazon
     </a>
   </div>
 </article>
 
       <!-- RING DOORBELL -->
-      <article class="card">
-        <div class="card-media">
-          <img
-            src="https://m.media-amazon.com/images/I/51SX1drWh+L._SL1500_.jpg"
-            alt="Ring battery-powered video doorbell installed at front door"
-            loading="lazy"
-          />
-        </div>
+<article class="card">
+  <div class="card-media">
+    <img
+      src="https://m.media-amazon.com/images/I/51SX1drWh+L._SL1500_.jpg"
+      alt="Ring battery-powered video doorbell installed at front door"
+      loading="lazy"
+    />
+  </div>
 
-        <div>
-          <div class="card-tag">Smart Home</div>
-          <h3 class="card-title">Ring Battery Doorbell + Indoor Chime</h3>
-          <p class="card-text">
-            A battery-powered video doorbell with live notifications and an indoor chime,
-            so you can see and hear who’s at the door from your phone.
-          </p>
-        </div>
-        <div class="card-meta">
-          <span class="price-tag">Simple security &amp; peace of mind</span>
-          <a class="btn-link" href="https://www.amazon.com/Ring-Battery-Doorbell-Indoor-Chime/dp/B0F1C2P38G?tag=swimmysstudio-20&linkCode=ll1&linkId=ceb6f8f1b72bf4156a4f77a658afcdba&language=en_US&ref_=as_li_ss_tl" target="_blank" rel="noopener noreferrer">
-            View on Amazon
-          </a>
-        </div>
-      </article>
+  <div>
+    <div class="card-tag">Smart Home</div>
+    <h3 class="card-title">Ring Battery Doorbell + Indoor Chime</h3>
+    <p class="card-text">
+      A battery-powered video doorbell with live notifications and an indoor chime, so you can
+      see and hear who’s at the door from your phone.
+    </p>
+  </div>
+  <div class="card-meta">
+    <span class="price-tag">Simple security &amp; peace of mind</span>
+    <a class="btn-link" href="YOUR_RING_AFFILIATE_LINK" target="_blank" rel="noopener noreferrer">
+      View on Amazon
+    </a>
+  </div>
+</article>
 
       <!-- MEATER -->
       <article class="card">
@@ -1287,43 +1396,100 @@
     </div>
   </section>
 
-  <!-- NEWSLETTER / CONTACT -->
-  <section id="contact">
-    <div class="section-label">Stay in Touch</div>
-    <h2 class="section-title">Get Tech Updates &amp; Finds</h2>
-    <p class="section-description">
-      Want an occasional heads-up when I find something surprisingly useful, a clean tech deal,
-      or post a new setup breakdown? Drop your email below.
-    </p>
+ <!-- STAY CONNECTED -->
+<section id="contact">
+  <div class="section-label">Stay in Touch</div>
+  <h2 class="section-title">Check Back for Weekly Tech Finds</h2>
 
-    <div class="newsletter">
-      <div>
-        <strong style="font-size: 0.9rem;">Studio Newsletter</strong>
-        <p>
-          This form is just a visual example. Connect it to your email provider
-          (like Mailchimp, ConvertKit, etc.) to start collecting sign-ups and keep people
-          in the loop.
-        </p>
+  <p class="section-description">
+    New gadgets, upgrades, and everyday tech picks drop here every week.  
+    For even faster updates — plus exclusive pins, short reviews, and setup inspo — follow Swimmy’s Studio on Instagram and Pinterest.
+  </p>
+
+  <div class="newsletter" style="align-items: center; text-align: left;">
+    <div>
+      <strong style="font-size: 0.9rem;">Follow Swimmy’s Studio</strong>
+      <p>
+        Join the community for weekly updates across platforms.  
+        More tech, more ideas, more koi vibes.
+      </p>
+
+      <div style="margin-top: 0.75rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+
+        <!-- Instagram Button -->
+        <a href="https://www.instagram.com/swimmys_studio/"
+           target="_blank" rel="noopener noreferrer"
+           class="btn-primary"
+           style="display:flex; align-items:center; gap:0.5rem; text-decoration:none;">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png"
+               alt="Instagram icon"
+               style="width:18px; height:18px; border-radius:4px;">
+          Instagram
+        </a>
+
+        <!-- Pinterest Button -->
+        <a href="https://www.pinterest.com/swimmysstudio/"
+           target="_blank" rel="noopener noreferrer"
+           class="btn-primary"
+           style="display:flex; align-items:center; gap:0.5rem; text-decoration:none;">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png"
+               alt="Pinterest icon"
+               style="width:18px; height:18px; border-radius:4px;">
+          Pinterest
+        </a>
+
       </div>
-      <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Replace this alert with your real email integration.');">
-        <input type="email" placeholder="your@email.com" required />
-        <button class="btn-primary" type="submit">Notify Me</button>
-      </form>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- LEGAL / FOOTER -->
-  <section class="legal">
-    <small>
-      This site includes affiliate links. If you purchase through these links (including Amazon links),
-      I may earn a small commission at no additional cost to you. Thank you for supporting Swimmy’s Studio
-      and future tech experiments.
-    </small>
+   <!-- PREMIUM ANIMATED FOOTER -->
+  <section class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-disclosure">
+          <h3>Affiliate &amp; Transparency</h3>
+          <p>
+            This site includes affiliate links. If you purchase through these links
+            (including Amazon links), I may earn a small commission at no additional
+            cost to you. I only highlight tech that I’d use myself or genuinely think
+            is worth checking out.
+          </p>
+        </div>
 
-    <footer>
-      <span>© <span id="year"></span> Swimmy's Studio / @swimmys_studio</span>
-      <span>Built with gadgets, pixels, and koi energy.</span>
-    </footer>
+        <div class="footer-social">
+          <span class="footer-social-label">Follow Swimmy’s Studio</span>
+          <div class="footer-social-links">
+            <a href="https://www.instagram.com/swimmys_studio/"
+               target="_blank" rel="noopener noreferrer">
+              <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png"
+                   alt="Instagram icon">
+              Instagram
+            </a>
+
+            <a href="https://www.pinterest.com/swimmysstudio/"
+               target="_blank" rel="noopener noreferrer">
+              <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png"
+                   alt="Pinterest icon">
+              Pinterest
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-koi-wrap">
+        <div class="footer-koi-stream">
+          <div class="koi koi-1"></div>
+          <div class="koi koi-2"></div>
+          <div class="koi koi-3"></div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Swimmy's Studio / @swimmys_studio</span>
+        <span>Built with gadgets, pixels, and koi energy.</span>
+      </div>
+    </div>
   </section>
 </main>
 
