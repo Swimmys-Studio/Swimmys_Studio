@@ -431,21 +431,23 @@
     }
 
     /* Product image block inside cards */
-    .card-media {
-      width: 100%;
-      border-radius: 14px;
-      overflow: hidden;
-      margin-bottom: 0.7rem;
-      border: 1px solid rgba(15, 23, 42, 0.8);
-      background: radial-gradient(circle at top, #1f2937, #020617);
-    }
+.card-media {
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 0.7rem;
+  border: 1px solid rgba(15, 23, 42, 0.8);
+  background: radial-gradient(circle at top, #1f2937, #020617);
+  height: 220px;      /* ← FIX: locks all cards to same photo height */
+}
 
-    .card-media img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      display: block;
-    }
+/* Forces Amazon images to fit perfectly inside the box */
+.card-media img {
+  width: 100%;
+  height: 100%;        /* ← now fills the box */
+  object-fit: cover;   /* ← crops nicely instead of stretching */
+  display: block;
+}
 
     /* archive rows */
     .archive-row {
